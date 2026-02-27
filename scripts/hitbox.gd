@@ -1,6 +1,7 @@
 class_name myhitbox
 extends Area2D
 
+@onready var has_pickaxe
 # Use @onready to find the child once the node enters the scene tree
 @onready var col = $CollisionShape2D
 
@@ -18,8 +19,9 @@ func _ready() -> void:
 func _process(delta) -> void:
 	#pass
 	 #1. Start the attack
+	has_pickaxe=$"../../../../pickaxe pickup".has_pickaxe
 	if Input.is_action_just_pressed("attack"):
-		col.set_deferred("disabled", false)
+		col.set_deferred("disabled", !has_pickaxe)
 		timer = 0.1 # Set a small window of time for the hit
 		
 	# 2. Count down the timer if an attack is active
