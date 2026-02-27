@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://v6rnkpbpro2u"]
+
+[ext_resource type="Texture2D" uid="uid://d10lnvk330gu7" path="res://Diamond_Pickaxe_JE3_BE3.webp" id="1_40cab"]
+[ext_resource type="Script" uid="uid://0o26l8shvtup" path="res://scripts/hitbox.gd" id="2_2ikqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ikqw"]
+size = Vector2(37.75, 54)
+
+[node name="pickaxe" type="Node2D" unique_id=1080184335]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923382456]
+position = Vector2(0.195, -1)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("1_40cab")
+offset = Vector2(500.345, 0)
+
+[node name="myhitbox" type="Area2D" parent="Sprite2D" unique_id=384855291]
+position = Vector2(-3, 15.384616)
+scale = Vector2(15.384616, 15.384616)
+script = ExtResource("2_2ikqw")
+metadata/_custom_type_script = "uid://0o26l8shvtup"
+
+[node name="PickaxeHit" type="CollisionShape2D" parent="Sprite2D/myhitbox" unique_id=1667864616]
+position = Vector2(49, 0)
+shape = SubResource("RectangleShape2D_2ikqw")

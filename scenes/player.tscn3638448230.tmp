@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b262lh50l2281"]
+
+[ext_resource type="Texture2D" uid="uid://do2wbqh10o732" path="res://hty.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://csr3xbcn63qxw" path="res://scripts/player.gd" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://v6rnkpbpro2u" path="res://scenes/pickaxe.tscn" id="3_qhqgy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vyb7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 90.90909
+height = 298.1818
+
+[node name="Player" type="CharacterBody2D" unique_id=1440685661]
+script = ExtResource("2_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753330045]
+position = Vector2(0, 0.500003)
+scale = Vector2(0.351, 0.51552796)
+sprite_frames = SubResource("SpriteFrames_g2els")
+animation = &"Idle"
+
+[node name="pickaxe" parent="AnimatedSprite2D" unique_id=1080184335 instance=ExtResource("3_qhqgy")]
+position = Vector2(0, -0.96988535)
+scale = Vector2(2.849003, 1.9397591)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222744153]
+position = Vector2(-1, 1)
+scale = Vector2(0.275, 0.275)
+shape = SubResource("CapsuleShape2D_3vyb7")

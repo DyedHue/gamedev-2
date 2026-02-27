@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var pick1
+var pick2
+var pick1col 
+var pick2col
 # --- Enums ---
 enum HorizontalState { NONE, WALK, RUN }
 enum VerticalState { NONE, GROUND_JUMP, RUN_JUMP, AIR_JUMP, WALL_JUMP, FALL, FLOATING }
@@ -48,13 +52,22 @@ var wall_jump_back_dur: float = 0.0
 var debug_info: String = ""
 var frame_count: int = 0
 
-
+@onready var sprite = $AnimatedSprite2D
 
 func _ready() -> void:
 	air_jump_charge = MAX_AIR_JUMP_CHARGE
 	#can_wall_slide = true
 	can_dash = true
 	can_variable_jump = true
+	pick1=$AnimatedSprite2D/pickaxe
+	pick2= $AnimatedSprite2D/pickaxe2
+	pick1col =$AnimatedSprite2D/pickaxe/myhitbox/CollisionShape2D
+	pick2col= $AnimatedSprite2D/pickaxe2/myhitbox/CollisionShape2D
+	pick1col.disabled=false
+	pick1.show()
+	pick2.hide()
+	pick2col.disabled=true
+	
 
 func _physics_process(delta: float) -> void:
 	var gravity_vec: Vector2 = handle_gravity(delta)
@@ -79,10 +92,24 @@ func _physics_process(delta: float) -> void:
 		current_velocity.y = wall_jump_vec.y
 
 	current_velocity = pre_update_state(delta, current_velocity)
+	# Get the player's intentional direction (-1, 0, or 1)
+	var input_dir = Input.get_axis("move_left", "move_right")
+
+	# Only flip if the player is actually pressing a direction key
+	if Input.is_action_pressed("move_left"):
+		pick1col.disabled=true
+		pick1.hide()
+		pick2.show()
+		pick2col.disabled=false
+	elif Input.is_action_pressed("move_right"):
+		pick1col.disabled=false
+		pick1.show()
+		pick2.hide()
+		pick2col.disabled=true
 	
+	# Rest of your movement code...
 	velocity = current_velocity
 	move_and_slide()
-	
 	post_update_state()
 	
 	show_debug()
@@ -207,7 +234,9 @@ func post_update_state() -> void:
 		state.is_airborne = true
 	else:
 		state.is_airborne = false
+		
 
+		
 func show_debug() -> void:
 	var slide_str = "sliding" if state.is_wall_sliding else "notSlid"
 	
