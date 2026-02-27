@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cnejflencuu4m"]
 
-[ext_resource type="Script" uid="uid://slvioshjn70p" path="res://scripts/breakable_platform.gd" id="1_acxgj"]
-[ext_resource type="Texture2D" uid="uid://vtdwbwh3y8tn" path="res://base tile.png" id="1_ps70h"]
-[ext_resource type="Script" uid="uid://6jsd2mqkee2o" path="res://scripts/myhurtbox.gd" id="3_17a3a"]
+[ext_resource type="Script" path="res://scripts/breakable_platform.gd" id="1_acxgj"]
+[ext_resource type="Texture2D" uid="uid://cuxtgjg05q8lo" path="res://tiles.png" id="2_17a3a"]
+[ext_resource type="Script" path="res://scripts/myhurtbox.gd" id="3_17a3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acxgj"]
 size = Vector2(192, 64)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0teqy"]
-texture = ExtResource("1_ps70h")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8y0wd"]
+texture = ExtResource("2_17a3a")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -94,7 +94,7 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_flta5"]
 tile_size = Vector2i(64, 64)
-sources/1 = SubResource("TileSetAtlasSource_0teqy")
+sources/0 = SubResource("TileSetAtlasSource_8y0wd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y0wd"]
 size = Vector2(192, 64)
@@ -107,12 +107,11 @@ position = Vector2(96, 32)
 shape = SubResource("RectangleShape2D_acxgj")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1600094272]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0)
 tile_set = SubResource("TileSet_flta5")
 
 [node name="myhurtbox" type="Area2D" parent="." unique_id=1023415864]
 script = ExtResource("3_17a3a")
-metadata/_custom_type_script = "uid://6jsd2mqkee2o"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="myhurtbox" unique_id=479310504]
 position = Vector2(96, 32)

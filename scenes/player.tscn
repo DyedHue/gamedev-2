@@ -17,7 +17,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(387.14288, 545.4545)
+size = Vector2(502.14288, 485.20004)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
 radius = 90.90909
@@ -46,8 +46,8 @@ script = ExtResource("4_qlg0r")
 metadata/_custom_type_script = "uid://0o26l8shvtup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pickaxe/myhitbox" unique_id=1742868502]
-position = Vector2(183.57147, 10.909096)
-scale = Vector2(0.99999976, 0.9999999)
+position = Vector2(148.5714, 152.72728)
+scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="pickaxe2" type="Sprite2D" parent="AnimatedSprite2D" unique_id=1012724381]
@@ -60,8 +60,8 @@ script = ExtResource("4_qlg0r")
 metadata/_custom_type_script = "uid://0o26l8shvtup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pickaxe2/myhitbox" unique_id=1469757000]
-position = Vector2(183.57147, 10.909096)
-scale = Vector2(0.99999976, 0.9999999)
+position = Vector2(91.53418, 163.46284)
+scale = Vector2(0.99999976, 1)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222744153]
