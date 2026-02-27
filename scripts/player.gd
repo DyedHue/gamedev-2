@@ -4,6 +4,7 @@ var pick1
 var pick2
 var pick1col 
 var pick2col
+var attack: bool
 # --- Enums ---
 enum HorizontalState { NONE, WALK, RUN }
 enum VerticalState { NONE, GROUND_JUMP, RUN_JUMP, AIR_JUMP, WALL_JUMP, FALL, FLOATING }
@@ -67,6 +68,7 @@ func _ready() -> void:
 	pick1.show()
 	pick2.hide()
 	pick2col.disabled=true
+	attack=0
 	
 
 func _physics_process(delta: float) -> void:
@@ -80,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	
 	current_velocity.y += gravity_vec.y
 	current_velocity.x += movement_vec.x
-	
+	#if Input.is_action_pressed("attack")
 	if jump_vec != Vector2.ZERO:
 		current_velocity.y = jump_vec.y	
 		
@@ -93,11 +95,11 @@ func _physics_process(delta: float) -> void:
 
 	current_velocity = pre_update_state(delta, current_velocity)
 	# Get the player's intentional direction (-1, 0, or 1)
-	var input_dir = Input.get_axis("move_left", "move_right")
+	#var input_dir = Input.get_axis("move_left", "move_right")
 
 	# Only flip if the player is actually pressing a direction key
 	if Input.is_action_pressed("move_left"):
-		pick1col.disabled=true
+		pick1col.disabled=false
 		pick1.hide()
 		pick2.show()
 		pick2col.disabled=false
@@ -105,7 +107,7 @@ func _physics_process(delta: float) -> void:
 		pick1col.disabled=false
 		pick1.show()
 		pick2.hide()
-		pick2col.disabled=true
+		pick2col.disabled=false
 	
 	# Rest of your movement code...
 	velocity = current_velocity

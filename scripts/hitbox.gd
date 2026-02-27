@@ -16,15 +16,15 @@ func _ready() -> void:
 	col.set_deferred("disabled", true)
 
 func _process(delta) -> void:
-	pass
-	# 1. Start the attack
-	#if Input.is_action_just_pressed("attack"):
-		#col.set_deferred("disabled", false)
-		#timer = 0.1 # Set a small window of time for the hit
-		#
-	## 2. Count down the timer if an attack is active
-	#if timer > 0:
-		#timer -= delta
-		## 3. Disable when time runs out
-		#if timer <= 0:
-			#col.set_deferred("disabled", true)
+	#pass
+	 #1. Start the attack
+	if Input.is_action_just_pressed("attack"):
+		col.set_deferred("disabled", false)
+		timer = 0.1 # Set a small window of time for the hit
+		
+	# 2. Count down the timer if an attack is active
+	if timer > 0:
+		timer -= delta
+		# 3. Disable when time runs out
+		if timer <= 0:
+			col.set_deferred("disabled", true)

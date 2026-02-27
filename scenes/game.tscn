@@ -167,19 +167,19 @@ script = ExtResource("5_iywne")
 player = NodePath("..")
 
 [node name="CharacterBody2D" parent="." unique_id=1519753605 instance=ExtResource("5_p57ef")]
-position = Vector2(4261, 6757)
+position = Vector2(3984, 6877)
 
 [node name="Falling platform" parent="." unique_id=300561869 instance=ExtResource("6_u5sy4")]
 position = Vector2(3971, 6215)
 
 [node name="CharacterBody2D2" parent="." unique_id=920774195 instance=ExtResource("5_p57ef")]
-position = Vector2(4261, 6431)
+position = Vector2(3984, 6482)
 
 [node name="CharacterBody2D4" parent="." unique_id=1260987977 instance=ExtResource("5_p57ef")]
-position = Vector2(4267, 6543)
+position = Vector2(3987, 6606)
 
 [node name="CharacterBody2D3" parent="." unique_id=1469487345 instance=ExtResource("5_p57ef")]
-position = Vector2(4259, 6642)
+position = Vector2(4002, 6728)
 
 [node name="block1" parent="." unique_id=1506531663 instance=ExtResource("5_p57ef")]
 position = Vector2(5775, 4436)
