@@ -28,7 +28,7 @@ class PlayerState:
 @export var can_dash: bool = false
 @export var can_wall_slide: bool = false
 @export var can_variable_jump: bool = false
-
+@export var has_pickaxe: bool=false
 # --- Main Script ---
 
 var state: PlayerState = PlayerState.new()
@@ -65,13 +65,14 @@ func _ready() -> void:
 	pick1col =$AnimatedSprite2D/pickaxe/myhitbox/CollisionShape2D
 	pick2col= $AnimatedSprite2D/pickaxe2/myhitbox/CollisionShape2D
 	pick1col.disabled=false
-	pick1.show()
+	pick1.hide()
 	pick2.hide()
 	pick2col.disabled=true
 	attack=0
 	
 
 func _physics_process(delta: float) -> void:
+	has_pickaxe=$"../pickaxe pickup".has_pickaxe
 	var gravity_vec: Vector2 = handle_gravity(delta)
 	var movement_vec: Vector2 = handle_movement()
 	var jump_vec: Vector2 = handle_jump(delta)
@@ -99,13 +100,13 @@ func _physics_process(delta: float) -> void:
 
 	# Only flip if the player is actually pressing a direction key
 	if Input.is_action_pressed("move_left"):
-		pick1col.disabled=false
 		pick1.hide()
-		pick2.show()
-		pick2col.disabled=false
+		if has_pickaxe:
+			pick2.show()
 	elif Input.is_action_pressed("move_right"):
 		pick1col.disabled=false
-		pick1.show()
+		if has_pickaxe:
+			pick1.show()
 		pick2.hide()
 		pick2col.disabled=false
 	

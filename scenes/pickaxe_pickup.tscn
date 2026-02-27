@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://crkwari1hbrb5"]
+
+[ext_resource type="Texture2D" uid="uid://d10lnvk330gu7" path="res://Diamond_Pickaxe_JE3_BE3.webp" id="1_gmr8j"]
+
+[sub_resource type="GDScript" id="GDScript_gmr8j"]
+script/source = "extends Area2D
+
+@onready var item=$\".\"
+var has_pickaxe:bool=false
+# Called when the node enters the scene tree for the first time.
+func on_area_entered(other_area):
+	hide()
+	has_pickaxe=true
+	
+func _ready() -> void:
+	area_entered.connect(on_area_entered) # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmr8j"]
+radius = 39.92493
+
+[node name="pickaxe pickup" type="Area2D" unique_id=2089496253]
+script = SubResource("GDScript_gmr8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=338207338]
+position = Vector2(-5, 17)
+shape = SubResource("CircleShape2D_gmr8j")
+
+[node name="pickaxe pickup" type="Sprite2D" parent="." unique_id=833598599]
+position = Vector2(-7, 11)
+scale = Vector2(0.23888889, 0.24444444)
+texture = ExtResource("1_gmr8j")

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cq1p1qxcjdcse" path="res://scripts/camera_2d.gd" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cnejflencuu4m" path="res://scenes/breakable platform.tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bu6xm6dwub7f6" path="res://scenes/falling platform.tscn" id="6_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://crkwari1hbrb5" path="res://scenes/pickaxe_pickup.tscn" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("4_lbhrr")
@@ -29,7 +30,6 @@ texture_region_size = Vector2i(64, 64)
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:1/0 = 0
-4:1/0/terrain = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:1/0 = 0
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -291,7 +291,7 @@ tile_map_data = PackedByteArray("AAAJAAUAAQAEAAEAAAAJAAQAAQAEAAEAAAAJAAMAAQAEAAE
 tile_set = SubResource("TileSet_p57ef")
 
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
-position = Vector2(4523, 6917)
+position = Vector2(3664, 4799)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
 position = Vector2(0, -150.47)
@@ -337,3 +337,6 @@ position = Vector2(2342, 6748)
 
 [node name="CharacterBody2D8" parent="." unique_id=501973771 instance=ExtResource("5_p57ef")]
 position = Vector2(2342, 6626)
+
+[node name="pickaxe pickup" parent="." unique_id=2089496253 instance=ExtResource("8_gee14")]
+position = Vector2(-3138, 2594)

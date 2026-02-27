@@ -23,6 +23,10 @@ size = Vector2(387.14288, 545.4545)
 radius = 90.90909
 height = 298.1818
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
+radius = 25.0
+height = 84.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1440685661]
 script = ExtResource("2_g2els")
 
@@ -64,3 +68,8 @@ shape = SubResource("RectangleShape2D_tuyoq")
 position = Vector2(-1, 1)
 scale = Vector2(0.275, 0.275)
 shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1748513737]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654201792]
+shape = SubResource("CapsuleShape2D_dqkch")
