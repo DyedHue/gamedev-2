@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://b8n3wuqkjbyri"]
+
+[ext_resource type="PackedScene" uid="uid://b262lh50l2281" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://csr3xbcn63qxw" path="res://scripts/player.gd" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://bvqsdr2hy8c4n" path="res://scripts/logic_manager.gd" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://crn86ir408gcd" path="res://icon.svg" id="4_lbhrr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
+texture = ExtResource("4_lbhrr")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_p57ef"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_iywne")
+
+[node name="Game" type="Node2D" unique_id=1544222149]
+
+[node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
+script = ExtResource("2_lnu2h")
+WALK_SPEED = null
+RUN_SPEED = null
+JUMP_VELOCITY = null
+WALL_JUMP_SPEED = null
+MAX_JUMP_DURATION = null
+MAX_AIR_JUMP_DURATION = null
+MAX_WALL_JUMP_DURATION = null
+MAX_WALL_JUMP_BACK_DUR = null
+MAX_AIR_JUMP_CHARGE = null
+GRAVITY = null
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1784685403]
+
+[node name="UI" type="Node2D" parent="Player/CanvasLayer" unique_id=1535909649]
+
+[node name="LogicManager" type="Node2D" parent="." unique_id=448300941]
+script = ExtResource("3_lbhrr")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1001625729]
+tile_map_data = PackedByteArray("AAD8/wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAP//AQAAAAAAAAAEAP7/AQAAAAAAAAD7/wEAAQAAAAAAAAD6/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAD4/wEAAQAAAAAAAAD3/wEAAQAAAAAAAAD2/wEAAQAAAAAAAAD1/wEAAQAAAAAAAAD0/wEAAQAAAAAAAADz/wEAAQAAAAAAAADy/wEAAQAAAAAAAADy/wIAAQAAAAAAAADx/wIAAQAAAAAAAADw/wIAAQAAAAAAAADv/wIAAQAAAAAAAADu/wIAAQAAAAAAAADt/wIAAQAAAAAAAADs/wIAAQAAAAAAAADv//7/AQAAAAAAAADu//7/AQAAAAAAAADt//7/AQAAAAAAAADs//7/AQAAAAAAAADr//7/AQAAAAAAAADq//7/AQAAAAAAAADq//v/AQAAAAAAAADp//v/AQAAAAAAAADo//v/AQAAAAAAAADn//v/AQAAAAAAAADm//v/AQAAAAAAAADl//v/AQAAAAAAAADk//v/AQAAAAAAAAAEAP3/AQAAAAAAAAAEAPz/AQAAAAAAAAAEAPv/AQAAAAAAAAAEAPr/AQAAAAAAAAAEAPn/AQAAAAAAAAAEAPj/AQAAAAAAAAAEAPf/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_p57ef")

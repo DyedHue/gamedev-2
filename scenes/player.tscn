@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b262lh50l2281"]
+
+[ext_resource type="Texture2D" uid="uid://do2wbqh10o732" path="res://hty.png" id="1_3vyb7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vyb7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
+radius = 71.80529
+
+[node name="Player" type="CharacterBody2D" unique_id=1440685661]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753330045]
+scale = Vector2(0.275, 0.275)
+sprite_frames = SubResource("SpriteFrames_g2els")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222744153]
+position = Vector2(-1, 1)
+scale = Vector2(0.275, 0.275)
+shape = SubResource("CircleShape2D_3vyb7")
