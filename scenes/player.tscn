@@ -13,17 +13,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
-radius = 71.80529
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 90.90909
+height = 298.1818
 
 [node name="Player" type="CharacterBody2D" unique_id=1440685661]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753330045]
-scale = Vector2(0.275, 0.275)
+position = Vector2(0, 0.500003)
+scale = Vector2(0.351, 0.51552796)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222744153]
 position = Vector2(-1, 1)
 scale = Vector2(0.275, 0.275)
-shape = SubResource("CircleShape2D_3vyb7")
+shape = SubResource("CapsuleShape2D_3vyb7")
