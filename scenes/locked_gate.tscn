@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c57swl681sjah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0h3g"]
+size = Vector2(294, 628)
+
+[node name="locked gate" type="CharacterBody2D" unique_id=1420434393]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1624444000]
+position = Vector2(137, 66)
+shape = SubResource("RectangleShape2D_f0h3g")
