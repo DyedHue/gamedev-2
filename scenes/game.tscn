@@ -320,9 +320,6 @@ font_size = 39
 font = ExtResource("1_bhx41")
 font_size = 38
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_suyxu"]
-size = Vector2(9126, 7538)
-
 [sub_resource type="LabelSettings" id="LabelSettings_wljb1"]
 font_size = 23
 
@@ -775,7 +772,7 @@ position = Vector2(9599, 5945)
 position = Vector2(12418, 8079)
 
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
-position = Vector2(83, -449)
+position = Vector2(9607, -1554)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
 position = Vector2(0, -150.47)
@@ -825,12 +822,6 @@ offset_bottom = 5633.0
 text = "You need to find a
  way to open the gate"
 label_settings = SubResource("LabelSettings_sgl2t")
-
-[node name="grass area" type="Area2D" parent="." unique_id=55683448]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="grass area" unique_id=604128613]
-position = Vector2(8817, -408)
-shape = SubResource("RectangleShape2D_suyxu")
 
 [node name="boot_hint" type="Label" parent="." unique_id=1067435830]
 offset_left = -3035.0
