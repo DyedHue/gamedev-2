@@ -5,9 +5,11 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func on_area_entered(other_area):
 	hide()
+	$"../hook hint".show()
 	has_hook=true
 	
 func _ready() -> void:
+	$"../hook hint".hide()
 	area_entered.connect(on_area_entered) # Replace with function body.
 
 
