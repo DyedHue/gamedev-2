@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://cbbyieoys6v0u" path="res://scenes/boot_pickup.tscn" id="20_bt5mj"]
 [ext_resource type="Script" uid="uid://dr2y0cjb35ukq" path="res://scripts/locked_gate.gd" id="24_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://dx6fuvafdauir" path="res://scenes/hook_pickup.tscn" id="25_pl11u"]
+[ext_resource type="Texture2D" uid="uid://3ra402ifljh6" path="res://boots.png" id="22_pl11u"]
+[ext_resource type="Script" uid="uid://dr2y0cjb35ukq" path="res://scripts/locked_gate.gd" id="24_e1j6l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("4_lbhrr")
@@ -597,6 +599,11 @@ texture = ExtResource("19_264po")
 
 [node name="boot_pickup" parent="." unique_id=1705186427 instance=ExtResource("20_bt5mj")]
 position = Vector2(-3134, 387)
+
+[node name="Sprite2D" type="Sprite2D" parent="boot_pickup" unique_id=1458876108]
+position = Vector2(4.000009, 12.000008)
+scale = Vector2(0.4133333, 0.4133333)
+texture = ExtResource("22_pl11u")
 
 [node name="Gate_button" parent="." unique_id=1866291854 instance=ExtResource("15_ca42v")]
 position = Vector2(899, 6756)

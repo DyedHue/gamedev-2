@@ -25,10 +25,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_y4r1p")
+"texture": ExtResource("5_ur7pv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ur7pv")
+"texture": ExtResource("6_y4r1p")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_d2wvv")
@@ -62,7 +62,7 @@ position = Vector2(0, 1.000001)
 scale = Vector2(0.351, 0.42609733)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"Walk"
-frame_progress = 0.73670477
+frame_progress = 0.70198584
 
 [node name="pickaxe" type="Sprite2D" parent="AnimatedSprite2D" unique_id=871276771]
 position = Vector2(108.262115, 10.668665)
