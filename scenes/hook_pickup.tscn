@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dx6fuvafdauir"]
+
+[ext_resource type="Script" uid="uid://c6krb0cseeqhc" path="res://scripts/hook_pickup.gd" id="1_jd788"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ldb8"]
+radius = 95.77056
+
+[node name="hook pickup" type="Area2D" unique_id=1188009497]
+script = ExtResource("1_jd788")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760529413]
+shape = SubResource("CircleShape2D_4ldb8")

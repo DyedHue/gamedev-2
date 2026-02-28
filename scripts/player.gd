@@ -56,7 +56,6 @@ func _ready() -> void:
 	air_jump_charge = MAX_AIR_JUMP_CHARGE
 	#can_wall_slide = true
 	can_dash = true
-	can_variable_jump = false
 	pick1=$AnimatedSprite2D/pickaxe
 	pick2= $AnimatedSprite2D/pickaxe2
 	pick1col =$AnimatedSprite2D/pickaxe/myhitbox/CollisionShape2D
@@ -69,6 +68,7 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	can_wall_slide=$"../hook pickup".has_hook
 	has_pickaxe=$"../pickaxe pickup".has_pickaxe
 	can_variable_jump=$"../boot_pickup".has_boots
 	var gravity_vec: Vector2 = handle_gravity(delta)
@@ -163,7 +163,8 @@ func handle_jump(delta: float) -> Vector2:
 
 func handle_wall_jump() -> Vector2:
 	var vec = Vector2.ZERO
-	
+	if(!can_wall_slide):
+		return vec
 	if Input.is_action_just_pressed("jump"):
 		if is_on_wall() && !is_on_floor():
 			state.vertical = VerticalState.WALL_JUMP
