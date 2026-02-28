@@ -5,10 +5,12 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func on_area_entered(other_area):
 	hide()
+	$"../boot_hint".show()
 	has_boots=true
 	
 func _ready() -> void:
-	area_entered.connect(on_area_entered) # Replace with function body.
+	area_entered.connect(on_area_entered)
+	$"../boot_hint".hide() # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

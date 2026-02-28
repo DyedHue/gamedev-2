@@ -6,6 +6,7 @@ var pick1col
 var pick2col
 var attack: bool
 var gameover=false
+var is_on_grass:bool=false
 # --- Enums ---
 enum HorizontalState { NONE, WALK, RUN }
 enum VerticalState { NONE, GROUND_JUMP, RUN_JUMP, AIR_JUMP, WALL_JUMP, FALL, FLOATING }

@@ -26,9 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://cbbyieoys6v0u" path="res://scenes/boot_pickup.tscn" id="20_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://3ra402ifljh6" path="res://boots.png" id="22_pl11u"]
 [ext_resource type="Script" uid="uid://dr2y0cjb35ukq" path="res://scripts/locked_gate.gd" id="24_e1j6l"]
-[ext_resource type="PackedScene" uid="uid://dx6fuvafdauir" path="res://scenes/hook_pickup.tscn" id="25_pl11u"]
-[ext_resource type="PackedScene" uid="uid://d0rnhnt5t0r4l" path="res://scenes/apple.tscn" id="28_suyxu"]
-[ext_resource type="Script" uid="uid://tf36yimpy6mt" path="res://scripts/gameover.gd" id="29_sgl2t"]
+[ext_resource type="PackedScene" path="res://scenes/hook_pickup.tscn" id="25_pl11u"]
+[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="28_suyxu"]
+[ext_resource type="Script" path="res://scripts/gameover.gd" id="29_sgl2t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("4_lbhrr")
@@ -319,6 +319,20 @@ font_size = 39
 [sub_resource type="LabelSettings" id="LabelSettings_sgl2t"]
 font = ExtResource("1_bhx41")
 font_size = 38
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suyxu"]
+size = Vector2(9126, 7538)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wljb1"]
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_v2yb1"]
+font = ExtResource("1_bhx41")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_js0lu"]
+font = ExtResource("1_bhx41")
+font_size = 30
 
 [node name="Game" type="Node2D" unique_id=1544222149]
 
@@ -811,3 +825,34 @@ offset_bottom = 5633.0
 text = "You need to find a
  way to open the gate"
 label_settings = SubResource("LabelSettings_sgl2t")
+
+[node name="grass area" type="Area2D" parent="." unique_id=55683448]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass area" unique_id=604128613]
+position = Vector2(8817, -408)
+shape = SubResource("RectangleShape2D_suyxu")
+
+[node name="boot_hint" type="Label" parent="." unique_id=1067435830]
+offset_left = -3035.0
+offset_top = 264.0
+offset_right = -2794.0
+offset_bottom = 313.0
+text = "You can now long jump by 
+pressing and holding space key"
+label_settings = SubResource("LabelSettings_wljb1")
+
+[node name="pick hint" type="Label" parent="." unique_id=1757698457]
+offset_left = -3052.0
+offset_top = 2515.0
+offset_right = -2789.0
+offset_bottom = 2538.0
+text = "Left click or press E to use pickaxe"
+label_settings = SubResource("LabelSettings_v2yb1")
+
+[node name="hook hint" type="Label" parent="." unique_id=808507961]
+offset_left = 11664.0
+offset_top = 7970.0
+offset_right = 12318.0
+offset_bottom = 8007.0
+text = "Climb walls by repeatedly pressing space bar"
+label_settings = SubResource("LabelSettings_js0lu")
