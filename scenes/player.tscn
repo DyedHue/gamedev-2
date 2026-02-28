@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://csr3xbcn63qxw" path="res://scripts/player.gd" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://d10lnvk330gu7" path="res://Diamond_Pickaxe_JE3_BE3.webp" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://0o26l8shvtup" path="res://scripts/hitbox.gd" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://bkqiq0bin58gv" path="res://texture/new_gradient_texture_2d.tres" id="5_qlg0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -29,6 +30,11 @@ height = 84.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1440685661]
 script = ExtResource("2_g2els")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1836937095]
+scale = Vector2(3.75, 3.75)
+energy = 0.52
+texture = ExtResource("5_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753330045]
 position = Vector2(0, 0.500003)
