@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx6fuvafdauir"]
 
 [ext_resource type="Script" uid="uid://c6krb0cseeqhc" path="res://scripts/hook_pickup.gd" id="1_jd788"]
+[ext_resource type="Texture2D" uid="uid://gh25rguswu5b" path="res://hook.webp" id="2_ursrv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ldb8"]
 radius = 95.77056
@@ -10,3 +11,7 @@ script = ExtResource("1_jd788")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760529413]
 shape = SubResource("CircleShape2D_4ldb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1379674656]
+position = Vector2(18, 13)
+texture = ExtResource("2_ursrv")

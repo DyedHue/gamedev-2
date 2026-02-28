@@ -5,6 +5,7 @@ var pick2
 var pick1col 
 var pick2col
 var attack: bool
+var gameover=false
 # --- Enums ---
 enum HorizontalState { NONE, WALK, RUN }
 enum VerticalState { NONE, GROUND_JUMP, RUN_JUMP, AIR_JUMP, WALL_JUMP, FALL, FLOATING }
@@ -68,6 +69,8 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	#if gameover:
+		#return
 	can_wall_slide=$"../hook pickup".has_hook
 	has_pickaxe=$"../pickaxe pickup".has_pickaxe
 	can_variable_jump=$"../boot_pickup".has_boots
@@ -89,10 +92,12 @@ func _physics_process(delta: float) -> void:
 		current_velocity.y = wall_jump_vec.y
 
 	if Input.is_action_pressed("move_left"):
+		sprite.flip_h=true
 		pick1.hide()
 		if has_pickaxe:
 			pick2.show()
 	elif Input.is_action_pressed("move_right"):
+		sprite.flip_h=false
 		#pick1col.disabled=false
 		if has_pickaxe:
 			pick1.show()
@@ -131,6 +136,7 @@ func handle_movement() -> Vector2:
 		running = true
 		
 	var direction = Input.get_axis("move_left", "move_right")
+	
 	
 	if direction != 0:
 		move_vec.x = direction * cur_speed
@@ -180,6 +186,11 @@ func post_update_state() -> void:
 		
 	if state.vertical == VerticalState.FALL and is_on_floor():
 		state.vertical = VerticalState.NONE
+	
+	if(velocity.x != 0):
+		sprite.play("Walk")
+	else:
+		sprite.play("Idle")
 
 func show_debug() -> void:
 	var slide_str = "sliding" if state.is_wall_sliding else "notSlid"
