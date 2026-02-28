@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dcl8fiw54gtbi"]
+
+[ext_resource type="Script" uid="uid://dyj5qutoyatuy" path="res://scripts/gate_button.gd" id="1_uumd8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqfro"]
+size = Vector2(164, 26)
+
+[node name="Gate_button" type="Area2D" unique_id=1866291854]
+script = ExtResource("1_uumd8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792429215]
+position = Vector2(72, 3)
+shape = SubResource("RectangleShape2D_fqfro")
