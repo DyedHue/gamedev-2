@@ -16,14 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://6wexiugma2yu" path="res://mossy stone.png" id="12_kvuet"]
 [ext_resource type="Texture2D" uid="uid://bpy6voo5dt5o6" path="res://corner vines.png" id="13_ca42v"]
 [ext_resource type="Texture2D" uid="uid://b4g0xl7og8l2h" path="res://grass background.png" id="14_trtic"]
-[ext_resource type="PackedScene" path="res://scenes/gate_button.tscn" id="15_ca42v"]
+[ext_resource type="PackedScene" uid="uid://dcl8fiw54gtbi" path="res://scenes/gate_button.tscn" id="15_ca42v"]
 [ext_resource type="Texture2D" uid="uid://dg1bar4f8whp5" path="res://hanging green.png" id="15_ir15t"]
-[ext_resource type="PackedScene" path="res://scenes/locked_gate.tscn" id="16_rysoc"]
+[ext_resource type="PackedScene" uid="uid://c57swl681sjah" path="res://scenes/locked_gate.tscn" id="16_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dbpacboq28uxo" path="res://moss stone big.png" id="17_rysoc"]
 [ext_resource type="Texture2D" uid="uid://rupqpa6hc30e" path="res://flowr.png" id="18_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://4pbjwbyarpo6" path="res://moss block.png" id="19_264po"]
-[ext_resource type="PackedScene" path="res://scenes/boot_pickup.tscn" id="20_bt5mj"]
-[ext_resource type="Script" path="res://scripts/locked_gate.gd" id="24_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://cbbyieoys6v0u" path="res://scenes/boot_pickup.tscn" id="20_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://3ra402ifljh6" path="res://boots.png" id="22_pl11u"]
+[ext_resource type="Script" uid="uid://dr2y0cjb35ukq" path="res://scripts/locked_gate.gd" id="24_e1j6l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("4_lbhrr")
@@ -603,6 +604,11 @@ texture = ExtResource("19_264po")
 [node name="boot_pickup" parent="." unique_id=1705186427 instance=ExtResource("20_bt5mj")]
 position = Vector2(-3134, 387)
 has_boots = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boot_pickup" unique_id=1458876108]
+position = Vector2(4.000009, 12.000008)
+scale = Vector2(0.4133333, 0.4133333)
+texture = ExtResource("22_pl11u")
 
 [node name="Gate_button" parent="." unique_id=1866291854 instance=ExtResource("15_ca42v")]
 position = Vector2(899, 6756)
