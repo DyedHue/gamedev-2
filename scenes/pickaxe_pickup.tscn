@@ -6,7 +6,7 @@
 script/source = "extends Area2D
 
 @onready var item=$\".\"
-var has_pickaxe:bool=false
+@export var has_pickaxe:bool=false
 # Called when the node enters the scene tree for the first time.
 func on_area_entered(other_area):
 	hide()

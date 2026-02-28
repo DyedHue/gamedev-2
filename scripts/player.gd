@@ -25,7 +25,7 @@ class PlayerState:
 @export var can_dash: bool = false
 @export var can_wall_slide: bool = false
 @export var can_variable_jump: bool = false
-@export var has_pickaxe: bool=false
+var has_pickaxe: bool=false
 # --- Main Script ---
 
 var state: PlayerState = PlayerState.new()
@@ -56,7 +56,7 @@ func _ready() -> void:
 	air_jump_charge = MAX_AIR_JUMP_CHARGE
 	#can_wall_slide = true
 	can_dash = true
-	can_variable_jump = true
+	can_variable_jump = false
 	pick1=$AnimatedSprite2D/pickaxe
 	pick2= $AnimatedSprite2D/pickaxe2
 	pick1col =$AnimatedSprite2D/pickaxe/myhitbox/CollisionShape2D
@@ -70,7 +70,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	has_pickaxe=$"../pickaxe pickup".has_pickaxe
-
+	can_variable_jump=$"../boot_pickup".has_boots
 	var gravity_vec: Vector2 = handle_gravity(delta)
 	var movement_vec: Vector2 = handle_movement()
 	var jump_vec: Vector2 = handle_jump(delta)
