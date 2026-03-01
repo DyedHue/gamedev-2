@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(275.78247, 258.38428)
+size = Vector2(156.84857, 157.5492)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
 radius = 90.90909
@@ -54,7 +54,7 @@ script = ExtResource("2_g2els")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1836937095]
 scale = Vector2(3.75, 3.75)
-energy = 0.52
+energy = 1.3
 texture = ExtResource("5_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753330045]
@@ -65,8 +65,8 @@ animation = &"Walk"
 frame_progress = 0.73670477
 
 [node name="pickaxe" type="Sprite2D" parent="AnimatedSprite2D" unique_id=871276771]
-position = Vector2(129.98576, 33.993874)
-scale = Vector2(0.4665242, 0.41106337)
+position = Vector2(88.31908, 42.243866)
+scale = Vector2(0.75142443, 0.6620944)
 texture = ExtResource("8_ur7pv")
 
 [node name="myhitbox" type="Area2D" parent="AnimatedSprite2D/pickaxe" unique_id=429834374]
@@ -74,21 +74,22 @@ script = ExtResource("4_qlg0r")
 metadata/_custom_type_script = "uid://0o26l8shvtup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pickaxe/myhitbox" unique_id=1742868502]
-position = Vector2(35.391174, 39.319412)
-scale = Vector2(1, 0.99999994)
+position = Vector2(77.025955, 9.841232)
+scale = Vector2(1, 0.9999999)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="pickaxe2" type="Sprite2D" parent="AnimatedSprite2D" unique_id=1012724381]
-position = Vector2(-144.48987, 30.784008)
-scale = Vector2(-0.46882734, 0.398551)
+position = Vector2(-88.31909, 44.590748)
+scale = Vector2(-0.7540392, 0.64101017)
 texture = ExtResource("8_ur7pv")
 
 [node name="myhitbox" type="Area2D" parent="AnimatedSprite2D/pickaxe2" unique_id=614276018]
+position = Vector2(139.7979, 10.983671)
 script = ExtResource("4_qlg0r")
 metadata/_custom_type_script = "uid://0o26l8shvtup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pickaxe2/myhitbox" unique_id=1469757000]
-position = Vector2(13.879898, 46.41942)
+position = Vector2(-65.11943, -6.577408)
 scale = Vector2(0.99999976, 1)
 shape = SubResource("RectangleShape2D_tuyoq")
 

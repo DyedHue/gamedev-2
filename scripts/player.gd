@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var gameended: bool = 0
 var pick1
 var pick2
 var pick1col 
@@ -53,6 +54,9 @@ var debug_info: String = ""
 var frame_count: int = 0
 
 @onready var sprite = $AnimatedSprite2D
+@onready var light: PointLight2D = $PointLight2D
+
+var game_over_camera_pos: Vector2 = Vector2(0.18, 0.18)
 
 func _ready() -> void:
 	air_jump_charge = MAX_AIR_JUMP_CHARGE
@@ -71,7 +75,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	#if gameover:
-		#return
+		#$Camera2D.zoom = $Camera2D.zoom.move_toward(game_over_camera_pos, 300 * delta)
 	can_wall_slide=$"../hook pickup".has_hook
 	has_pickaxe=$"../pickaxe pickup".has_pickaxe
 	can_variable_jump=$"../boot_pickup".has_boots
@@ -192,6 +196,11 @@ func post_update_state() -> void:
 		sprite.play("Walk")
 	else:
 		sprite.play("Idle")
+		
+	if position.x > 4547.0 && position.y < 3359.0:
+		light.enabled = false
+	else:
+		light.enabled = true
 
 func show_debug() -> void:
 	var slide_str = "sliding" if state.is_wall_sliding else "notSlid"

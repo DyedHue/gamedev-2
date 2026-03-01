@@ -9,7 +9,7 @@ extends Camera2D
 ## How far AHEAD of the player the camera should stay
 @export var lead_distance: float = 180.0
 ## How fast the camera snaps to the "Advanced" side when you switch directions
-@export var lead_snap_speed: float = 8.0
+@export var lead_snap_speed: float = 2.0
 
 @export_group("Vertical Look (The Pan)")
 ## Speed of the look up/down (Made FASTER)
