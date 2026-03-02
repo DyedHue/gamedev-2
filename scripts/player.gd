@@ -8,6 +8,9 @@ var pick2col
 var attack: bool
 var gameover=false
 var is_on_grass:bool=false
+var block_falling: bool=false
+var delay: float = 0.7
+var timer: float = 0.0
 # --- Enums ---
 enum HorizontalState { NONE, WALK, RUN }
 enum VerticalState { NONE, GROUND_JUMP, RUN_JUMP, AIR_JUMP, WALL_JUMP, FALL, FLOATING }
@@ -38,6 +41,7 @@ var state: PlayerState = PlayerState.new()
 @export var JUMP_VELOCITY: float = -650.0
 @export var WALL_JUMP_SPEED: float = 700.0
 @export var GRAVITY: float = 2800.0
+@onready var ceiling_check = $RayCast2D 
 
 const MAX_JUMP_DURATION: float = 0.25
 const MAX_WALL_JUMP_DURATION: float = 0.15
@@ -95,7 +99,8 @@ func _physics_process(delta: float) -> void:
 		
 	if wall_jump_vec != Vector2.ZERO:
 		current_velocity.y = wall_jump_vec.y
-
+	#if(timer):
+		
 	if Input.is_action_pressed("move_left"):
 		sprite.flip_h=true
 		pick1.hide()
@@ -111,11 +116,18 @@ func _physics_process(delta: float) -> void:
 	
 	# Rest of your movement code...
 	velocity = current_velocity
+	if ceiling_check.is_colliding():
+		var collider = ceiling_check.get_collider()
+		if collider is CharacterBody2D: 
+			add_collision_exception_with(collider)
+	else:
+		pass
 	move_and_slide()
 	post_update_state()
 	
 	show_debug()
 	frame_count += 1
+	timer=max(0, timer-delta)
 
 
 
@@ -142,12 +154,12 @@ func handle_movement() -> Vector2:
 		
 	var direction = Input.get_axis("move_left", "move_right")
 	
-	
-	if direction != 0:
-		move_vec.x = direction * cur_speed
-		state.horizontal = HorizontalState.RUN if running else HorizontalState.WALK
-	else:
-		state.horizontal = HorizontalState.NONE
+	if timer ==0:
+		if direction != 0:
+			move_vec.x = direction * cur_speed
+			state.horizontal = HorizontalState.RUN if running else HorizontalState.WALK
+		else:
+			state.horizontal = HorizontalState.NONE
 
 	return move_vec
 

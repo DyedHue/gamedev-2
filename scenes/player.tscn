@@ -102,3 +102,6 @@ shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654201792]
 shape = SubResource("CapsuleShape2D_dqkch")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=591690394]
+target_position = Vector2(0, -20)
