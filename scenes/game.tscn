@@ -761,7 +761,7 @@ position = Vector2(12418, 8079)
 position = Vector2(892, 6767)
 
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
-position = Vector2(167, -587)
+position = Vector2(0, -40)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
 position = Vector2(0, -150.46997)
@@ -842,4 +842,12 @@ self_modulate = Color(1, 1, 1, 0.41568628)
 material = SubResource("CanvasItemMaterial_dinhu")
 position = Vector2(8918.777, -622)
 scale = Vector2(3.2728152, 7.645126)
+texture = ExtResource("12_dinhu")
+
+[node name="Sunray2" type="Sprite2D" parent="." unique_id=1191420024]
+self_modulate = Color(1, 1, 1, 0.41568628)
+material = SubResource("CanvasItemMaterial_dinhu")
+position = Vector2(10435, -1290.0001)
+rotation = -0.19333512
+scale = Vector2(0.9020922, 10.055132)
 texture = ExtResource("12_dinhu")
