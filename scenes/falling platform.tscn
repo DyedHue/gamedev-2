@@ -183,6 +183,8 @@ sources/1 = SubResource("TileSetAtlasSource_q3y0o")
 size = Vector2(194, 190)
 
 [node name="Falling platform" type="CharacterBody2D" unique_id=300561869]
+platform_on_leave = 2
+platform_floor_layers = 4294967040
 script = ExtResource("1_mjfkx")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1116119770]

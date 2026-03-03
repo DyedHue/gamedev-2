@@ -116,12 +116,12 @@ func _physics_process(delta: float) -> void:
 	
 	# Rest of your movement code...
 	velocity = current_velocity
-	if ceiling_check.is_colliding():
-		var collider = ceiling_check.get_collider()
-		if collider is CharacterBody2D: 
-			add_collision_exception_with(collider)
-	else:
-		pass
+	#if ceiling_check.is_colliding():
+		#var collider = ceiling_check.get_collider()
+		#if collider is CharacterBody2D: 
+			#add_collision_exception_with(collider)
+	#else:
+		#pass
 	move_and_slide()
 	post_update_state()
 	

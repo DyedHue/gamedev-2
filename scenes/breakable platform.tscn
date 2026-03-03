@@ -100,6 +100,8 @@ sources/0 = SubResource("TileSetAtlasSource_8y0wd")
 size = Vector2(192, 64)
 
 [node name="breakable platform" type="CharacterBody2D" unique_id=1519753605]
+platform_on_leave = 2
+platform_floor_layers = 4294967040
 script = ExtResource("1_acxgj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1787620849]
