@@ -7,7 +7,7 @@ extends Area2D
 func on_area_entered(other_area):
 	hide()
 	hook_hint.show()
-	has_hook=true
+	$"../../Player".can_wall_slide=true
 	
 func _ready() -> void:
 	hook_hint.hide()

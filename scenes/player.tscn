@@ -21,7 +21,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -62,7 +62,7 @@ position = Vector2(0, 1.000001)
 scale = Vector2(0.351, 0.42609733)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"Walk"
-frame_progress = 0.73670477
+frame_progress = 0.25377706
 
 [node name="pickaxe" type="Sprite2D" parent="AnimatedSprite2D" unique_id=871276771]
 position = Vector2(88.31908, 42.243866)

@@ -31,7 +31,7 @@ class PlayerState:
 @export var can_dash: bool = false
 @export var can_wall_slide: bool = false
 @export var can_variable_jump: bool = false
-var has_pickaxe: bool=false
+@export var has_pickaxe: bool=false
 # --- Main Script ---
 
 var state: PlayerState = PlayerState.new()
@@ -80,10 +80,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#if gameover:
 		#$Camera2D.zoom = $Camera2D.zoom.move_toward(game_over_camera_pos, 300 * delta)
-	can_dash=$"../Pickups/dash boot pickup".has_dash_boots
-	can_wall_slide=$"../Pickups/hook pickup".has_hook
-	has_pickaxe=$"../Pickups/pickaxe pickup".has_pickaxe
-	can_variable_jump=$"../Pickups/boot_pickup".has_boots
 	var gravity_vec: Vector2 = handle_gravity(delta)
 	var movement_vec: Vector2 = handle_movement()
 	var jump_vec: Vector2 = handle_jump(delta)
@@ -210,10 +206,10 @@ func post_update_state() -> void:
 	else:
 		sprite.play("Idle")
 		
-	if position.x > 4547.0 && position.y < 3359.0:
-		light.enabled = false
-	else:
-		light.enabled = true
+	#if position.x > 4547.0 && position.y < 3359.0:
+		#light.enabled = false
+	#else:
+		#light.enabled = true
 
 func show_debug() -> void:
 	var slide_str = "sliding" if state.is_wall_sliding else "notSlid"

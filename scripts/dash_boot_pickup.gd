@@ -6,7 +6,7 @@ extends Area2D
 func on_area_entered(other_area):
 	hide()
 	dash_boot_hint.show()
-	has_dash_boots=true
+	$"../../Player".can_dash=true
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
