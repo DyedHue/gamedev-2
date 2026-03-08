@@ -3,7 +3,7 @@ extends Area2D
 #@onready var item=$"."
 @export var gameover:bool=false
 # Called when the node enters the scene tree for the first time.
-func on_area_entered(other_area):
+func on_area_entered(_other_area):
 	hide()
 	gameover=true
 	
@@ -12,5 +12,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_aaaaaaaadelta: float) -> void:
 	pass

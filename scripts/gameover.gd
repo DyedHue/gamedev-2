@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	gameover=$"../apple".gameover
+	gameover=owner.get_node("apple").gameover
 	if(gameover):
 		show()
 	pass
