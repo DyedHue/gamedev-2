@@ -2,13 +2,14 @@
 
 [ext_resource type="FontFile" uid="uid://c8uneuyr0f4ub" path="res://fonts/Museo_Slab_500_2.otf" id="1_bhx41"]
 [ext_resource type="PackedScene" uid="uid://b262lh50l2281" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dbjml18yoe8c5" path="res://scenes/hud.tscn" id="1_wljb1"]
 [ext_resource type="Texture2D" uid="uid://1b1d8srjoqvo" path="res://grass background extra.png" id="2_1kice"]
 [ext_resource type="Texture2D" uid="uid://cuxtgjg05q8lo" path="res://tiles.png" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://blr6bo7iwcbei" path="res://stone background.png" id="4_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://vtdwbwh3y8tn" path="res://base tile.png" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://cq1p1qxcjdcse" path="res://scripts/camera_2d.gd" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cnejflencuu4m" path="res://scenes/breakable platform.tscn" id="5_p57ef"]
-[ext_resource type="Texture2D" uid="uid://bm0r1gikoi3o2" path="res://collection orb.png" id="5_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://bm0r1gikoi3o2" path="res://sprites/collection orb.png" id="5_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://c4a0sm7gijuu4" path="res://hint sparkle.png" id="6_qouja"]
 [ext_resource type="PackedScene" uid="uid://bu6xm6dwub7f6" path="res://scenes/falling platform.tscn" id="6_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dggxqglet6rx6" path="res://scenes/pickaxe_pickup.tscn" id="8_gee14"]
@@ -25,13 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://rupqpa6hc30e" path="res://flowr.png" id="18_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://4pbjwbyarpo6" path="res://moss block.png" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://cbbyieoys6v0u" path="res://scenes/boot_pickup.tscn" id="20_bt5mj"]
-[ext_resource type="Texture2D" uid="uid://3ra402ifljh6" path="res://boots.png" id="22_pl11u"]
 [ext_resource type="Script" uid="uid://dr2y0cjb35ukq" path="res://scripts/locked_gate.gd" id="24_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://no6qx4l4gesm" path="res://scenes/dash_boot_pickup.tscn" id="24_suyxu"]
 [ext_resource type="PackedScene" uid="uid://dx6fuvafdauir" path="res://scenes/hook_pickup.tscn" id="25_pl11u"]
 [ext_resource type="PackedScene" uid="uid://d0rnhnt5t0r4l" path="res://scenes/apple.tscn" id="28_suyxu"]
 [ext_resource type="Script" uid="uid://tf36yimpy6mt" path="res://scripts/gameover.gd" id="29_sgl2t"]
-[ext_resource type="Script" uid="uid://riajb07y5wrr" path="res://scripts/time_elapsed.gd" id="32_wljb1"]
+[ext_resource type="Script" path="res://scripts/time_elapsed.gd" id="32_wljb1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("4_lbhrr")
@@ -340,6 +340,8 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D" unique_id=1544222149]
 
+[node name="HUD" parent="." unique_id=640754921 instance=ExtResource("1_wljb1")]
+
 [node name="Color Rects" type="Node2D" parent="." unique_id=1369506212]
 
 [node name="ColorRect" type="ColorRect" parent="Color Rects" unique_id=15113930]
@@ -425,10 +427,10 @@ texture = ExtResource("6_qouja")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1054170353]
 visible = false
-offset_left = -3916.0
-offset_top = 1404.0
-offset_right = 5946.0
-offset_bottom = 5962.0
+offset_left = -3821.0
+offset_top = 1420.0
+offset_right = 6041.0
+offset_bottom = 5978.0
 texture = ExtResource("4_0tnpc")
 stretch_mode = 4
 
@@ -793,6 +795,21 @@ position = Vector2(8918.777, -622)
 scale = Vector2(3.2728152, 7.645126)
 texture = ExtResource("12_dinhu")
 
+[node name="Sunray2" type="Sprite2D" parent="yggdrassil environment" unique_id=354364188]
+self_modulate = Color(1, 1, 1, 0.41568628)
+material = SubResource("CanvasItemMaterial_dinhu")
+position = Vector2(8918.777, -622)
+scale = Vector2(3.2728152, 7.645126)
+texture = ExtResource("12_dinhu")
+
+[node name="Sunray3" type="Sprite2D" parent="yggdrassil environment" unique_id=1191420024]
+self_modulate = Color(1, 1, 1, 0.41568628)
+material = SubResource("CanvasItemMaterial_dinhu")
+position = Vector2(10435, -1290.0001)
+rotation = -0.1933351
+scale = Vector2(0.9020922, 10.055132)
+texture = ExtResource("12_dinhu")
+
 [node name="break to bring platform 1" type="Node2D" parent="." unique_id=355716347]
 
 [node name="breakable platform" parent="break to bring platform 1" unique_id=466145069 instance=ExtResource("5_p57ef")]
@@ -815,45 +832,6 @@ position = Vector2(9281, 6354)
 
 [node name="breakable platform2" parent="break to bring platform 1" unique_id=1673873881 instance=ExtResource("5_p57ef")]
 position = Vector2(9599, 5945)
-
-[node name="locked gate" parent="." unique_id=1420434393 instance=ExtResource("16_rysoc")]
-position = Vector2(8321, 5667)
-script = ExtResource("24_e1j6l")
-
-[node name="boot_pickup" parent="." unique_id=1705186427 instance=ExtResource("20_bt5mj")]
-position = Vector2(-3134, 387)
-has_boots = true
-
-[node name="Sprite2D" type="Sprite2D" parent="boot_pickup" unique_id=1458876108]
-position = Vector2(4.000009, 12.000008)
-scale = Vector2(0.4133333, 0.4133333)
-texture = ExtResource("22_pl11u")
-
-[node name="pickaxe pickup" parent="." unique_id=2089496253 instance=ExtResource("8_gee14")]
-position = Vector2(-3124, 2617)
-has_pickaxe = true
-
-[node name="hook pickup" parent="." unique_id=1188009497 instance=ExtResource("25_pl11u")]
-position = Vector2(12418, 8079)
-has_hook = true
-
-[node name="Gate_button" parent="." unique_id=1866291854 instance=ExtResource("15_ca42v")]
-position = Vector2(892, 6767)
-
-[node name="dash boot pickup" parent="." unique_id=868775752 instance=ExtResource("24_suyxu")]
-position = Vector2(20314, 6888)
-
-[node name="apple" parent="." unique_id=1434066133 instance=ExtResource("28_suyxu")]
-position = Vector2(8800, -1754)
-
-[node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
-position = Vector2(9710, -1472)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
-position = Vector2(0, -150.46997)
-zoom = Vector2(0.745, 0.745)
-script = ExtResource("5_iywne")
-player = NodePath("..")
 
 [node name="text labels" type="Node2D" parent="." unique_id=50261874]
 
@@ -936,17 +914,35 @@ offset_right = 9066.0
 offset_bottom = -1392.0
 script = ExtResource("32_wljb1")
 
-[node name="Sunray" type="Sprite2D" parent="." unique_id=354364188]
-self_modulate = Color(1, 1, 1, 0.41568628)
-material = SubResource("CanvasItemMaterial_dinhu")
-position = Vector2(8918.777, -622)
-scale = Vector2(3.2728152, 7.645126)
-texture = ExtResource("12_dinhu")
+[node name="Pickups" type="Node2D" parent="." unique_id=461905013]
 
-[node name="Sunray2" type="Sprite2D" parent="." unique_id=1191420024]
-self_modulate = Color(1, 1, 1, 0.41568628)
-material = SubResource("CanvasItemMaterial_dinhu")
-position = Vector2(10435, -1290.0001)
-rotation = -0.19333512
-scale = Vector2(0.9020922, 10.055132)
-texture = ExtResource("12_dinhu")
+[node name="boot_pickup" parent="Pickups" unique_id=1705186427 instance=ExtResource("20_bt5mj")]
+position = Vector2(-3136, 389)
+
+[node name="pickaxe pickup" parent="Pickups" unique_id=2089496253 instance=ExtResource("8_gee14")]
+position = Vector2(-3124, 2617)
+
+[node name="hook pickup" parent="Pickups" unique_id=1188009497 instance=ExtResource("25_pl11u")]
+position = Vector2(12418, 8079)
+
+[node name="dash boot pickup" parent="Pickups" unique_id=868775752 instance=ExtResource("24_suyxu")]
+position = Vector2(20314, 6888)
+
+[node name="locked gate" parent="." unique_id=1420434393 instance=ExtResource("16_rysoc")]
+position = Vector2(8321, 5667)
+script = ExtResource("24_e1j6l")
+
+[node name="Gate_button" parent="." unique_id=1866291854 instance=ExtResource("15_ca42v")]
+position = Vector2(892, 6767)
+
+[node name="apple" parent="." unique_id=1434066133 instance=ExtResource("28_suyxu")]
+position = Vector2(8800, -1754)
+
+[node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
+position = Vector2(211, -380)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
+position = Vector2(0, -150.46997)
+zoom = Vector2(0.745, 0.745)
+script = ExtResource("5_iywne")
+player = NodePath("..")

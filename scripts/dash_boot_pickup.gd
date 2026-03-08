@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var has_dash_boots=false
-@onready var dash_boot_hint=$"../text labels/dash boot hint"
+@onready var dash_boot_hint=$"../../text labels/dash boot hint"
 
 func on_area_entered(other_area):
 	hide()

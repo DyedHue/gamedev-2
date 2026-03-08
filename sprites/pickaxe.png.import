@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm0r1gikoi3o2"
-path="res://.godot/imported/collection orb.png-d2405eab6d170a5c5bda7972be632dec.ctex"
+uid="uid://daqli5xonlqx5"
+path="res://.godot/imported/pickaxe.png-4e20f51d4320f1548c604760140d996f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://collection orb.png"
-dest_files=["res://.godot/imported/collection orb.png-d2405eab6d170a5c5bda7972be632dec.ctex"]
+source_file="res://sprites/pickaxe.png"
+dest_files=["res://.godot/imported/pickaxe.png-4e20f51d4320f1548c604760140d996f.ctex"]
 
 [params]
 

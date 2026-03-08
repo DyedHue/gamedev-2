@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dggxqglet6rx6"]
 
-[ext_resource type="Texture2D" uid="uid://daqli5xonlqx5" path="res://pickaxe.png" id="1_gmr8j"]
+[ext_resource type="Texture2D" uid="uid://daqli5xonlqx5" path="res://sprites/pickaxe.png" id="1_gmr8j"]
 
 [sub_resource type="GDScript" id="GDScript_gmr8j"]
 script/source = "extends Area2D
 
 @onready var item=$\".\"
 @export var has_pickaxe:bool=false
-@onready var pick_hint=$\"../text labels/pick hint\"
+@onready var pick_hint=$\"../../text labels/pick hint\"
 # Called when the node enters the scene tree for the first time.
 func on_area_entered(other_area):
 	hide()

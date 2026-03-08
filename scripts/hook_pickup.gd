@@ -2,7 +2,7 @@ extends Area2D
 
 #@onready var item=$"."
 @export var has_hook:bool=false
-@onready var hook_hint=$"../text labels/hook hint"
+@onready var hook_hint=$"../../text labels/hook hint"
 # Called when the node enters the scene tree for the first time.
 func on_area_entered(other_area):
 	hide()

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbbyieoys6v0u"]
 
 [ext_resource type="Script" uid="uid://db0xat2iqhhix" path="res://scripts/boot_pickup.gd" id="1_c47nw"]
+[ext_resource type="Texture2D" uid="uid://3ra402ifljh6" path="res://sprites/boots.png" id="2_buyf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oimw0"]
 radius = 65.03076
@@ -10,3 +11,8 @@ script = ExtResource("1_c47nw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=772630508]
 shape = SubResource("CircleShape2D_oimw0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=20095275]
+position = Vector2(6.0000076, 9.000015)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("2_buyf5")
