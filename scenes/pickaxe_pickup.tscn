@@ -7,15 +7,16 @@ script/source = "extends Area2D
 
 @onready var item=$\".\"
 @export var has_pickaxe:bool=false
+@onready var pick_hint=$\"../text labels/pick hint\"
 # Called when the node enters the scene tree for the first time.
 func on_area_entered(other_area):
 	hide()
-	$\"../pick hint\".show()
+	pick_hint.show()
 	has_pickaxe=true
 	
 func _ready() -> void:
 	area_entered.connect(on_area_entered) # Replace with function body.
-	$\"../pick hint\".hide()
+	pick_hint.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
