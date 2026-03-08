@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dbjml18yoe8c5"]
+
+[ext_resource type="Texture2D" uid="uid://daqli5xonlqx5" path="res://sprites/pickaxe.png" id="1_5ysmq"]
+[ext_resource type="Script" uid="uid://bsbujlk6tkra4" path="res://scripts/hud.gd" id="1_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://3ra402ifljh6" path="res://sprites/boots.png" id="2_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://gh25rguswu5b" path="res://sprites/hook.webp" id="3_uo2fv"]
+
+[node name="HUD" type="CanvasLayer" unique_id=640754921]
+script = ExtResource("1_6fi6k")
+
+[node name="Pickaxe" type="Sprite2D" parent="." unique_id=426614083]
+position = Vector2(804, 53.999996)
+scale = Vector2(0.405, 0.405)
+texture = ExtResource("1_5ysmq")
+
+[node name="Jump boot" type="Sprite2D" parent="." unique_id=676179663]
+position = Vector2(893, 61)
+scale = Vector2(0.29666665, 0.29666665)
+texture = ExtResource("2_6fi6k")
+
+[node name="Hook" type="Sprite2D" parent="." unique_id=1161089689]
+position = Vector2(988.99994, 61.000015)
+scale = Vector2(0.47, 0.46000004)
+texture = ExtResource("3_uo2fv")
+
+[node name="Dash Boot" type="Sprite2D" parent="." unique_id=1957841070]

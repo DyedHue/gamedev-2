@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dcl8fiw54gtbi"]
 
 [ext_resource type="Script" uid="uid://dyj5qutoyatuy" path="res://scripts/gate_button.gd" id="1_uumd8"]
-[ext_resource type="Texture2D" uid="uid://2wvx5dbtiwpl" path="res://button.png" id="2_xp6qu"]
-[ext_resource type="Texture2D" uid="uid://lqw30uvo5nxt" path="res://button pressed.png" id="3_pu0hs"]
+[ext_resource type="Texture2D" uid="uid://2wvx5dbtiwpl" path="res://sprites/button.png" id="2_xp6qu"]
+[ext_resource type="Texture2D" uid="uid://lqw30uvo5nxt" path="res://sprites/button pressed.png" id="3_pu0hs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqfro"]
 size = Vector2(106, 39)

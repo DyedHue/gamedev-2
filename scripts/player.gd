@@ -80,10 +80,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#if gameover:
 		#$Camera2D.zoom = $Camera2D.zoom.move_toward(game_over_camera_pos, 300 * delta)
-	can_dash=$"../dash boot pickup".has_dash_boots
-	can_wall_slide=$"../hook pickup".has_hook
-	has_pickaxe=$"../pickaxe pickup".has_pickaxe
-	can_variable_jump=$"../boot_pickup".has_boots
+	can_dash=$"../Pickups/dash boot pickup".has_dash_boots
+	can_wall_slide=$"../Pickups/hook pickup".has_hook
+	has_pickaxe=$"../Pickups/pickaxe pickup".has_pickaxe
+	can_variable_jump=$"../Pickups/boot_pickup".has_boots
 	var gravity_vec: Vector2 = handle_gravity(delta)
 	var movement_vec: Vector2 = handle_movement()
 	var jump_vec: Vector2 = handle_jump(delta)

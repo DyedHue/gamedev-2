@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gh25rguswu5b"
-path="res://.godot/imported/hook.webp-7c2a3633c98a62864ab059a4a427c8dd.ctex"
+uid="uid://3ra402ifljh6"
+path="res://.godot/imported/boots.png-894e99a7d3db80cbae625b09fbfc7cf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hook.webp"
-dest_files=["res://.godot/imported/hook.webp-7c2a3633c98a62864ab059a4a427c8dd.ctex"]
+source_file="res://sprites/boots.png"
+dest_files=["res://.godot/imported/boots.png-894e99a7d3db80cbae625b09fbfc7cf6.ctex"]
 
 [params]
 
