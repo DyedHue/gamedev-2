@@ -7,7 +7,7 @@ extends Area2D
 func on_area_entered(_other_area):
 	hide()
 	boot_hint.show()
-	has_boots=true
+	$"../../Player".can_variable_jump=true
 	
 func _ready() -> void:
 	area_entered.connect(on_area_entered)

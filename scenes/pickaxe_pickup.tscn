@@ -12,7 +12,7 @@ script/source = "extends Area2D
 func on_area_entered(other_area):
 	hide()
 	pick_hint.show()
-	has_pickaxe=true
+	$\"../../Player\".has_pickaxe=true
 	
 func _ready() -> void:
 	area_entered.connect(on_area_entered) # Replace with function body.

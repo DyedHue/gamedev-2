@@ -4,17 +4,18 @@
 [ext_resource type="Script" uid="uid://bsbujlk6tkra4" path="res://scripts/hud.gd" id="1_6fi6k"]
 [ext_resource type="Texture2D" uid="uid://3ra402ifljh6" path="res://sprites/boots.png" id="2_6fi6k"]
 [ext_resource type="Texture2D" uid="uid://gh25rguswu5b" path="res://sprites/hook.webp" id="3_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://babelxtvnlw6r" path="res://sprites/dash_boots.webp" id="5_uo2fv"]
 
 [node name="HUD" type="CanvasLayer" unique_id=640754921]
 script = ExtResource("1_6fi6k")
 
 [node name="Pickaxe" type="Sprite2D" parent="." unique_id=426614083]
-position = Vector2(804, 53.999996)
+position = Vector2(888.99994, 55.999996)
 scale = Vector2(0.405, 0.405)
 texture = ExtResource("1_5ysmq")
 
 [node name="Jump boot" type="Sprite2D" parent="." unique_id=676179663]
-position = Vector2(893, 61)
+position = Vector2(800, 58)
 scale = Vector2(0.29666665, 0.29666665)
 texture = ExtResource("2_6fi6k")
 
@@ -24,3 +25,6 @@ scale = Vector2(0.47, 0.46000004)
 texture = ExtResource("3_uo2fv")
 
 [node name="Dash Boot" type="Sprite2D" parent="." unique_id=1957841070]
+position = Vector2(1061, 58.000023)
+scale = Vector2(0.3066668, 0.3066668)
+texture = ExtResource("5_uo2fv")
