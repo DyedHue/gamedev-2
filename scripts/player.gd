@@ -65,7 +65,7 @@ var game_over_camera_pos: Vector2 = Vector2(0.18, 0.18)
 func _ready() -> void:
 	air_jump_charge = MAX_AIR_JUMP_CHARGE
 	#can_wall_slide = true
-	can_dash = true
+	#can_dash = true
 	pick1=$AnimatedSprite2D/pickaxe
 	pick2= $AnimatedSprite2D/pickaxe2
 	pick1col =$AnimatedSprite2D/pickaxe/myhitbox/CollisionShape2D
@@ -80,6 +80,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#if gameover:
 		#$Camera2D.zoom = $Camera2D.zoom.move_toward(game_over_camera_pos, 300 * delta)
+	can_dash=$"../dash boot pickup".has_dash_boots
 	can_wall_slide=$"../hook pickup".has_hook
 	has_pickaxe=$"../pickaxe pickup".has_pickaxe
 	can_variable_jump=$"../boot_pickup".has_boots
@@ -148,7 +149,7 @@ func handle_movement() -> Vector2:
 	var cur_speed = WALK_SPEED
 	var running = false
 	
-	if Input.is_action_pressed("dash") and can_dash and is_on_floor():
+	if Input.is_action_pressed("dash") and can_dash:
 		cur_speed = RUN_SPEED
 		running = true
 		
