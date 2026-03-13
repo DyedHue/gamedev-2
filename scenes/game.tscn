@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dx6fuvafdauir" path="res://scenes/hook_pickup.tscn" id="25_pl11u"]
 [ext_resource type="PackedScene" uid="uid://d0rnhnt5t0r4l" path="res://scenes/apple.tscn" id="28_suyxu"]
 [ext_resource type="Script" uid="uid://tf36yimpy6mt" path="res://scripts/gameover.gd" id="29_sgl2t"]
-[ext_resource type="Script" uid="uid://riajb07y5wrr" path="res://scripts/time_elapsed.gd" id="32_wljb1"]
+[ext_resource type="Script" path="res://scripts/time_elapsed.gd" id="32_wljb1"]
 
 [sub_resource type="GDScript" id="GDScript_qouja"]
 script/source = "extends Area2D
@@ -116,10 +116,6 @@ outline_color = Color(0.32622838, 0.19899803, 4.813075e-08, 1)
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
 z_index = 2
 position = Vector2(4, -27)
-can_dash = true
-can_wall_slide = true
-can_variable_jump = true
-has_pickaxe = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
 position = Vector2(0, -150.46997)
@@ -700,11 +696,11 @@ text = "Climb walls by repeatedly pressing space bar"
 label_settings = SubResource("LabelSettings_js0lu")
 
 [node name="dash boot hint" type="Label" parent="text labels" unique_id=1833246369]
-offset_left = 19819.0
-offset_top = 6835.0
-offset_right = 20306.0
-offset_bottom = 6861.0
-text = "While running press right click to activate dash"
+offset_left = 19705.0
+offset_top = 6800.0
+offset_right = 20313.0
+offset_bottom = 6826.0
+text = "While running press right click or shift to activate dash"
 label_settings = SubResource("LabelSettings_gxtfn")
 
 [node name="gameover" type="Label" parent="text labels" unique_id=132683699]
