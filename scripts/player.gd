@@ -12,11 +12,10 @@ var block_falling: bool=false
 var delay: float = 0.7
 var timer: float = 0.0
 var is_frozen: bool = false
-# --- Enums ---
+
 enum HorizontalState { NONE, WALK, RUN }
 enum VerticalState { NONE, GROUND_JUMP, RUN_JUMP, AIR_JUMP, WALL_JUMP, FALL, FLOATING }
 
-# --- Helper Classes ---
 class PlayerState:
 	var horizontal: HorizontalState = HorizontalState.NONE
 	var vertical: VerticalState = VerticalState.NONE
@@ -31,7 +30,6 @@ class PlayerState:
 @export var can_wall_slide: bool = false
 @export var can_variable_jump: bool = false
 @export var has_pickaxe: bool=false
-# --- Main Script ---
 
 var state: PlayerState = PlayerState.new()
 
@@ -67,8 +65,8 @@ func _ready() -> void:
 	#can_dash = true
 	pick1=$AnimatedSprite2D/pickaxe
 	pick2= $AnimatedSprite2D/pickaxe2
-	pick1col =$AnimatedSprite2D/pickaxe/myhitbox/CollisionShape2D
-	pick2col= $AnimatedSprite2D/pickaxe2/myhitbox/CollisionShape2D
+	pick1col =$AnimatedSprite2D/pick1Hitbox/CollisionShape2D
+	pick2col= $AnimatedSprite2D/pick2Hitbox/CollisionShape2D
 	pick1col.disabled=false
 	pick1.hide()
 	pick2.hide()

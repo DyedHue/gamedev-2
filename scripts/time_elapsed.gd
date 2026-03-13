@@ -9,14 +9,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !shown:
-		timer += delta
-		if gameovernode.gameover:
-			var min: int = timer/60
-			var sec: int = timer - min
-			var txt = "Time elapsed: %d:" %min
-			if sec < 10:
-				txt += "0"
-			txt += "%d" %sec
-			text = txt
-			shown =  true
+	if shown:
+		return
+	timer += delta
+	if gameovernode.gameover:
+		var min: int = timer/60
+		var sec: int = timer - min
+		var txt = "Time elapsed: %d:" %min
+		if sec < 10:
+			txt += "0"
+		txt += "%d" %sec
+		text = txt
+		shown =  true

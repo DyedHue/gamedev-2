@@ -10,21 +10,21 @@
 script = ExtResource("1_6fi6k")
 
 [node name="Jump boot" type="Sprite2D" parent="." unique_id=676179663]
-position = Vector2(1085.0001, 59)
+position = Vector2(36.038, 608.162)
 scale = Vector2(0.14857922, 0.14857922)
 texture = ExtResource("2_6fi6k")
 
 [node name="Pickaxe" type="Sprite2D" parent="." unique_id=426614083]
-position = Vector2(1037.4192, 57.419197)
+position = Vector2(84.038, 606.581)
 scale = Vector2(0.23580872, 0.23580872)
 texture = ExtResource("1_5ysmq")
 
 [node name="Hook" type="Sprite2D" parent="." unique_id=1161089689]
-position = Vector2(989, 58.000004)
+position = Vector2(132.457, 607.162)
 scale = Vector2(0.23538953, 0.23038127)
 texture = ExtResource("3_uo2fv")
 
 [node name="Dash Boot" type="Sprite2D" parent="." unique_id=1957841070]
-position = Vector2(941.00006, 58)
+position = Vector2(180.038, 607.162)
 scale = Vector2(0.15358758, 0.15358758)
 texture = ExtResource("5_uo2fv")
