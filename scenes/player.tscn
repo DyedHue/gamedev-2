@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bnpgv40o2qkp3" path="res://sprites/fullSprite.png" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://0o26l8shvtup" path="res://scripts/hitbox.gd" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bkqiq0bin58gv" path="res://texture/new_gradient_texture_2d.tres" id="5_qlg0r"]
+[ext_resource type="Script" uid="uid://b8advrr5rgwub" path="res://scripts/pickaxe.gd" id="5_tuyoq"]
+[ext_resource type="Script" uid="uid://cj4w8314aff80" path="res://scripts/pickaxe_2.gd" id="7_fjrip"]
 [ext_resource type="Texture2D" uid="uid://daqli5xonlqx5" path="res://sprites/pickaxe.png" id="8_ur7pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
@@ -107,7 +109,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(156.84857, 157.5492)
+size = Vector2(156.84857, 56.714127)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
 radius = 90.90909
@@ -137,30 +139,40 @@ animation = &"Fall"
 frame_progress = 0.6974409
 
 [node name="pickaxe" type="Sprite2D" parent="AnimatedSprite2D" unique_id=871276771]
-position = Vector2(88.31908, 42.243866)
+z_index = -1
+position = Vector2(42.735043, 58.672035)
 scale = Vector2(0.75142443, 0.6620944)
 texture = ExtResource("8_ur7pv")
+offset = Vector2(37.235, -25.09)
+script = ExtResource("5_tuyoq")
 
-[node name="myhitbox" type="Area2D" parent="AnimatedSprite2D/pickaxe" unique_id=429834374]
+[node name="pick1Hitbox" type="Area2D" parent="AnimatedSprite2D" unique_id=429834374]
+position = Vector2(48.43305, 28.16258)
+scale = Vector2(0.75142443, 0.6620944)
 script = ExtResource("4_qlg0r")
 metadata/_custom_type_script = "uid://0o26l8shvtup"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pickaxe/myhitbox" unique_id=1742868502]
-position = Vector2(77.025955, 9.841232)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pick1Hitbox" unique_id=1742868502]
+position = Vector2(83.41233, 28.357058)
 scale = Vector2(1, 0.9999999)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="pickaxe2" type="Sprite2D" parent="AnimatedSprite2D" unique_id=1012724381]
-position = Vector2(-88.31909, 44.590748)
+z_index = -1
+position = Vector2(-39.88604, 56.325157)
 scale = Vector2(-0.7540392, 0.64101017)
 texture = ExtResource("8_ur7pv")
+offset = Vector2(42.245, -26.96)
+script = ExtResource("7_fjrip")
 
-[node name="myhitbox" type="Area2D" parent="AnimatedSprite2D/pickaxe2" unique_id=614276018]
-position = Vector2(139.7979, 10.983671)
+[node name="pick2Hitbox" type="Area2D" parent="AnimatedSprite2D" unique_id=614276018]
+position = Vector2(-142.45013, 51.6314)
+rotation = 3.1415927
+scale = Vector2(0.7540392, -0.64101017)
 script = ExtResource("4_qlg0r")
 metadata/_custom_type_script = "uid://0o26l8shvtup"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pickaxe2/myhitbox" unique_id=1469757000]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/pick2Hitbox" unique_id=1469757000]
 position = Vector2(-65.11943, -6.577408)
 scale = Vector2(0.99999976, 1)
 shape = SubResource("RectangleShape2D_tuyoq")

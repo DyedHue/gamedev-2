@@ -21,9 +21,16 @@ var look_timer: float = 0.0
 
 var current_shake_intensity: float = 0.0
 
+var is_in_cinematic: bool = false
+var cinematic_target_pos: Vector2
+var cinematic_target_zoom: Vector2
+var cinematic_speed: float = 1.0
+var default_zoom: Vector2
+
 func _ready() -> void:
 	home_local_pos = position
-	top_level = true
+	default_zoom = zoom
+	top_level = true 
 	if player:
 		global_position = player.global_position + home_local_pos
 
@@ -38,6 +45,14 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if not player: return
+
+	if is_in_cinematic:
+		global_position = global_position.lerp(cinematic_target_pos, cinematic_speed * delta)
+		zoom = zoom.lerp(cinematic_target_zoom, cinematic_speed * delta)
+		return 
+
+	if zoom != default_zoom:
+		zoom = zoom.lerp(default_zoom, follow_speed * delta)
 
 	var h_input = Input.get_axis("move_left", "move_right")
 	var target_lead = h_input * lead_distance
@@ -74,3 +89,12 @@ func start_shake(intensity: float) -> void:
 
 func stop_shake() -> void:
 	current_shake_intensity = 0.0
+
+func start_game_over_cam(target_pos: Vector2, target_zoom: Vector2, speed: float) -> void:
+	is_in_cinematic = true
+	cinematic_target_pos = target_pos
+	cinematic_target_zoom = target_zoom
+	cinematic_speed = speed
+
+func end_game_over_cam() -> void:
+	is_in_cinematic = false
