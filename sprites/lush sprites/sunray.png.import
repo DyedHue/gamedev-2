@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg1bar4f8whp5"
-path="res://.godot/imported/hanging green.png-df041143c2f94273c9f82a222cc1f104.ctex"
+uid="uid://7f4vibwfmo3i"
+path="res://.godot/imported/sunray.png-e48d79515612044773d02bb08b14459a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hanging green.png"
-dest_files=["res://.godot/imported/hanging green.png-df041143c2f94273c9f82a222cc1f104.ctex"]
+source_file="res://sprites/lush sprites/sunray.png"
+dest_files=["res://.godot/imported/sunray.png-e48d79515612044773d02bb08b14459a.ctex"]
 
 [params]
 

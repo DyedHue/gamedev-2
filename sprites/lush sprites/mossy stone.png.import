@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y3j1u2l7qtgk"
-path="res://.godot/imported/walk 2.png-105bf33b4cd2c650add1fd1e6a8966c2.ctex"
+uid="uid://6wexiugma2yu"
+path="res://.godot/imported/mossy stone.png-5be9364cbe80a51d46837fd67ee13615.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/walk 2.png"
-dest_files=["res://.godot/imported/walk 2.png-105bf33b4cd2c650add1fd1e6a8966c2.ctex"]
+source_file="res://sprites/lush sprites/mossy stone.png"
+dest_files=["res://.godot/imported/mossy stone.png-5be9364cbe80a51d46837fd67ee13615.ctex"]
 
 [params]
 

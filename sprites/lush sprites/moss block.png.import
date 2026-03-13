@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt0fo8ht2khil"
-path="res://.godot/imported/all small stuff.png-cc10e4ca05748b44fbfb0b96a35f14d4.ctex"
+uid="uid://4pbjwbyarpo6"
+path="res://.godot/imported/moss block.png-c912e31de99d5fbae47e3a2932ae8811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://all small stuff.png"
-dest_files=["res://.godot/imported/all small stuff.png-cc10e4ca05748b44fbfb0b96a35f14d4.ctex"]
+source_file="res://sprites/lush sprites/moss block.png"
+dest_files=["res://.godot/imported/moss block.png-c912e31de99d5fbae47e3a2932ae8811.ctex"]
 
 [params]
 

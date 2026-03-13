@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blr6bo7iwcbei"
-path="res://.godot/imported/stone background.png-0de789c6c2996a1d793405df7f841f31.ctex"
+uid="uid://jdlmr8038lby"
+path="res://.godot/imported/grass foreground.png-b01711ba974f38567441c33bf377de17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stone background.png"
-dest_files=["res://.godot/imported/stone background.png-0de789c6c2996a1d793405df7f841f31.ctex"]
+source_file="res://sprites/lush sprites/grass foreground.png"
+dest_files=["res://.godot/imported/grass foreground.png-b01711ba974f38567441c33bf377de17.ctex"]
 
 [params]
 

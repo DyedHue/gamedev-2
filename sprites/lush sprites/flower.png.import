@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do2wbqh10o732"
-path="res://.godot/imported/hty.png-1bf8b1ac48d379eac4237fd24b070212.ctex"
+uid="uid://rupqpa6hc30e"
+path="res://.godot/imported/flower.png-15df78926312481bf35c292c451d5e2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hty.png"
-dest_files=["res://.godot/imported/hty.png-1bf8b1ac48d379eac4237fd24b070212.ctex"]
+source_file="res://sprites/lush sprites/flower.png"
+dest_files=["res://.godot/imported/flower.png-15df78926312481bf35c292c451d5e2c.ctex"]
 
 [params]
 

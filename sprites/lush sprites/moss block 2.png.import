@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vtdwbwh3y8tn"
-path="res://.godot/imported/base tile.png-41cf9a50f5a04cff776785f53da6800b.ctex"
+uid="uid://dfsefqibei1n"
+path="res://.godot/imported/moss block 2.png-4c839622b26e8078841be3dca9a9cc6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://base tile.png"
-dest_files=["res://.godot/imported/base tile.png-41cf9a50f5a04cff776785f53da6800b.ctex"]
+source_file="res://sprites/lush sprites/moss block 2.png"
+dest_files=["res://.godot/imported/moss block 2.png-4c839622b26e8078841be3dca9a9cc6e.ctex"]
 
 [params]
 
