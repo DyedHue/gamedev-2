@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnejflencuu4m"]
 
 [ext_resource type="Script" uid="uid://slvioshjn70p" path="res://scripts/breakable_platform.gd" id="1_acxgj"]
-[ext_resource type="Texture2D" uid="uid://cuxtgjg05q8lo" path="res://tiles.png" id="2_17a3a"]
+[ext_resource type="Texture2D" uid="uid://cuxtgjg05q8lo" path="res://sprites/tiles.png" id="2_17a3a"]
 [ext_resource type="Script" uid="uid://6jsd2mqkee2o" path="res://scripts/myhurtbox.gd" id="3_17a3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acxgj"]

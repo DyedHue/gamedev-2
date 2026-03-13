@@ -10,7 +10,7 @@ func unlock(sprite, yn):
 	if yn:
 		sprite.modulate=Color.WHITE
 	else:
-		sprite.modulate=Color.BLACK
+		sprite.modulate.a=0
 	
 func _ready() -> void:
 	unlock(pickaxe, false)

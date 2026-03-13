@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4g0xl7og8l2h"
-path="res://.godot/imported/grass background.png-4899fdf924b88c7457eb62d9c8f51ef2.ctex"
+uid="uid://bpy6voo5dt5o6"
+path="res://.godot/imported/corner vines.png-38d406b05c2990f65fab011c5d6d96ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass background.png"
-dest_files=["res://.godot/imported/grass background.png-4899fdf924b88c7457eb62d9c8f51ef2.ctex"]
+source_file="res://sprites/lush sprites/corner vines.png"
+dest_files=["res://.godot/imported/corner vines.png-38d406b05c2990f65fab011c5d6d96ef.ctex"]
 
 [params]
 

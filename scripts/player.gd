@@ -11,16 +11,15 @@ var is_on_grass:bool=false
 var block_falling: bool=false
 var delay: float = 0.7
 var timer: float = 0.0
+var is_frozen: bool = false
 # --- Enums ---
 enum HorizontalState { NONE, WALK, RUN }
 enum VerticalState { NONE, GROUND_JUMP, RUN_JUMP, AIR_JUMP, WALL_JUMP, FALL, FLOATING }
-enum AbilityState { NONE, DASH }
 
 # --- Helper Classes ---
 class PlayerState:
 	var horizontal: HorizontalState = HorizontalState.NONE
 	var vertical: VerticalState = VerticalState.NONE
-	var ability: AbilityState = AbilityState.NONE
 	
 	var is_wall_sliding: bool = false
 	
@@ -111,7 +110,6 @@ func _physics_process(delta: float) -> void:
 		pick2.hide()
 		#pick2col.disabled=false
 	
-	# Rest of your movement code...
 	velocity = current_velocity
 	#if ceiling_check.is_colliding():
 		#var collider = ceiling_check.get_collider()
@@ -132,7 +130,7 @@ func handle_gravity(delta: float) -> Vector2:
 	var gravity_vec = Vector2.ZERO
 	var current_gravity = GRAVITY
 	
-	if is_on_wall() && !is_on_floor() and state.vertical == VerticalState.FALL:
+	if is_on_wall() && !is_on_floor() and state.vertical == VerticalState.FALL and can_wall_slide:
 		current_gravity /= 6.0
 		
 	if not is_on_floor():
@@ -142,6 +140,9 @@ func handle_gravity(delta: float) -> Vector2:
 
 func handle_movement() -> Vector2:
 	var move_vec = Vector2.ZERO
+	if is_frozen:
+		return move_vec
+		
 	var cur_speed = WALK_SPEED
 	var running = false
 	
@@ -162,6 +163,8 @@ func handle_movement() -> Vector2:
 
 func handle_jump(delta: float) -> Vector2:
 	var jump_vec = Vector2.ZERO
+	if is_frozen:
+		return jump_vec
 	
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -183,6 +186,8 @@ func handle_jump(delta: float) -> Vector2:
 
 func handle_wall_jump() -> Vector2:
 	var vec = Vector2.ZERO
+	if is_frozen:
+		return vec
 	if(!can_wall_slide):
 		return vec
 	if Input.is_action_just_pressed("jump"):

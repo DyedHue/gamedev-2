@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4a0sm7gijuu4"
-path="res://.godot/imported/hint sparkle.png-e129bd029fea04843468d6a2442df3fa.ctex"
+uid="uid://cinht33atcxka"
+path="res://.godot/imported/grass.png-8250577b4dfbdfde58995d85a6e14996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hint sparkle.png"
-dest_files=["res://.godot/imported/hint sparkle.png-e129bd029fea04843468d6a2442df3fa.ctex"]
+source_file="res://sprites/lush sprites/grass.png"
+dest_files=["res://.godot/imported/grass.png-8250577b4dfbdfde58995d85a6e14996.ctex"]
 
 [params]
 

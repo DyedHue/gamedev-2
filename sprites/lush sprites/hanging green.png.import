@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4pbjwbyarpo6"
-path="res://.godot/imported/moss block.png-a298277590b4ff76fa69a5869b89cb4d.ctex"
+uid="uid://dg1bar4f8whp5"
+path="res://.godot/imported/hanging green.png-5fd753b80de496640c0306369b0ebfd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://moss block.png"
-dest_files=["res://.godot/imported/moss block.png-a298277590b4ff76fa69a5869b89cb4d.ctex"]
+source_file="res://sprites/lush sprites/hanging green.png"
+dest_files=["res://.godot/imported/hanging green.png-5fd753b80de496640c0306369b0ebfd5.ctex"]
 
 [params]
 

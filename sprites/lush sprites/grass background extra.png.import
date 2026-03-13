@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7f4vibwfmo3i"
-path="res://.godot/imported/sunray.png-3546da1b63fb763ffaaa5473b75a86c3.ctex"
+uid="uid://1b1d8srjoqvo"
+path="res://.godot/imported/grass background extra.png-47d45dab281432f4f430ab3e0bf6137e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sunray.png"
-dest_files=["res://.godot/imported/sunray.png-3546da1b63fb763ffaaa5473b75a86c3.ctex"]
+source_file="res://sprites/lush sprites/grass background extra.png"
+dest_files=["res://.godot/imported/grass background extra.png-47d45dab281432f4f430ab3e0bf6137e.ctex"]
 
 [params]
 

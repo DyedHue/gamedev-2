@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbpacboq28uxo"
-path="res://.godot/imported/moss stone big.png-f55250fbb66c993d58c6647c7a995d26.ctex"
+uid="uid://bnxbqfrwrh6an"
+path="res://.godot/imported/sunray 2.png-8befd45829bd4e4fd9dc3f5f5f66afc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://moss stone big.png"
-dest_files=["res://.godot/imported/moss stone big.png-f55250fbb66c993d58c6647c7a995d26.ctex"]
+source_file="res://sprites/lush sprites/sunray 2.png"
+dest_files=["res://.godot/imported/sunray 2.png-8befd45829bd4e4fd9dc3f5f5f66afc7.ctex"]
 
 [params]
 
