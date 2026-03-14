@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbjml18yoe8c5" path="res://scenes/hud.tscn" id="1_wljb1"]
 [ext_resource type="Texture2D" uid="uid://1b1d8srjoqvo" path="res://sprites/lush sprites/grass background extra.png" id="2_1kice"]
 [ext_resource type="Texture2D" uid="uid://blr6bo7iwcbei" path="res://sprites/lush sprites/stone background.png" id="4_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://dw3u1psmoy6ol" path="res://Audios/Brick 4.mp3" id="4_wljb1"]
 [ext_resource type="Script" uid="uid://cq1p1qxcjdcse" path="res://scripts/camera_2d.gd" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cnejflencuu4m" path="res://scenes/breakable platform.tscn" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://bm0r1gikoi3o2" path="res://sprites/collection orb.png" id="5_sgl2t"]
@@ -115,7 +116,8 @@ outline_color = Color(0.32622838, 0.19899803, 4.813075e-08, 1)
 
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
 z_index = 2
-position = Vector2(10, -286)
+position = Vector2(4554, 4351)
+has_pickaxe = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
 position = Vector2(0, -150.46997)
@@ -124,6 +126,11 @@ script = ExtResource("5_iywne")
 player = NodePath("..")
 
 [node name="HUD" parent="." unique_id=640754921 instance=ExtResource("1_wljb1")]
+
+[node name="SFX" type="Node2D" parent="." unique_id=1439634554]
+
+[node name="breaking sound" type="AudioStreamPlayer" parent="SFX" unique_id=543714831]
+stream = ExtResource("4_wljb1")
 
 [node name="Color Rects" type="Node2D" parent="." unique_id=1369506212]
 
