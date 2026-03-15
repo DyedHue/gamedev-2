@@ -10,13 +10,9 @@ func _process(_delta: float) -> void:
 
 func spin_attack() -> void:
 	is_attacking = true
-	
 	var tween = create_tween()
-
 	tween.tween_property(self, "rotation_degrees", rotation_degrees + rotation_amount, 0.1)
-	
 	tween.tween_property(self, "rotation_degrees", rotation_degrees, 0.15)
-	
 	tween.finished.connect(_on_attack_finished)
 
 func _on_attack_finished() -> void:
