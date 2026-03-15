@@ -120,8 +120,7 @@ outline_color = Color(0.32622838, 0.19899803, 4.813075e-08, 1)
 
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
 z_index = 3
-
-position = Vector2(9483, -1437)
+position = Vector2(21, -121)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
 position = Vector2(0, -150.46997)
@@ -135,6 +134,15 @@ player = NodePath("..")
 
 [node name="breaking sound" type="AudioStreamPlayer" parent="SFX" unique_id=543714831]
 stream = ExtResource("4_wljb1")
+
+[node name="item pickup" type="AudioStreamPlayer" parent="SFX" unique_id=1889736555]
+stream = ExtResource("7_twgab")
+volume_db = 19.438
+
+[node name="Button press" type="AudioStreamPlayer" parent="SFX" unique_id=1234549450]
+stream = ExtResource("7_twgab")
+volume_db = 24.0
+pitch_scale = 0.31
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2008967908]
 z_index = 4
@@ -166,36 +174,6 @@ z_index = 2
 material = SubResource("CanvasItemMaterial_dinhu")
 scale = Vector2(0.30554736, 0.1308023)
 texture = ExtResource("20_qouja")
-
-[node name="ColorRect4" type="ColorRect" parent="." unique_id=3040722]
-
-
-[node name="SFX" type="Node2D" parent="." unique_id=1439634554]
-
-[node name="breaking sound" type="AudioStreamPlayer" parent="SFX" unique_id=543714831]
-stream = ExtResource("4_wljb1")
-
-[node name="item pickup" type="AudioStreamPlayer" parent="SFX" unique_id=1889736555]
-stream = ExtResource("7_twgab")
-volume_db = 19.438
-
-[node name="Button press" type="AudioStreamPlayer" parent="SFX" unique_id=1234549450]
-stream = ExtResource("7_twgab")
-volume_db = 24.0
-pitch_scale = 0.31
-
-[node name="Color Rects" type="Node2D" parent="." unique_id=1369506212]
-light_mask = 2
-
-[node name="ColorRect4" type="ColorRect" parent="Color Rects" unique_id=3040722]
-
-light_mask = 2
-layout_direction = 1
-offset_left = -4663.0
-offset_top = 1384.0
-offset_right = 22655.0
-offset_bottom = 9015.0
-color = Color(0.2784314, 0.27058825, 0.25882354, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="." unique_id=1611043797]
 light_mask = 2
