@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bm0r1gikoi3o2" path="res://sprites/collection orb.png" id="5_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://bu6xm6dwub7f6" path="res://scenes/falling platform.tscn" id="6_u5sy4"]
 [ext_resource type="TileSet" uid="uid://m1tlmmqtocb7" path="res://tilesets/new_tile_set.tres" id="6_wljb1"]
-[ext_resource type="AudioStream" uid="uid://mfssrj2661nm" path="res://Audios/8a47098d4cb8d02aea56fcf723659bfb.wav" id="7_twgab"]
+[ext_resource type="AudioStream" uid="uid://mfssrj2661nm" path="res://Audios/pickup.wav" id="7_twgab"]
 [ext_resource type="PackedScene" uid="uid://dggxqglet6rx6" path="res://scenes/pickaxe_pickup.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://dfsefqibei1n" path="res://sprites/lush sprites/moss block 2.png" id="10_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cinht33atcxka" path="res://sprites/lush sprites/grass.png" id="11_kvpfn"]
