@@ -15,4 +15,5 @@ func _on_area_entered(hitbox: myhitbox):
 		if (hitbox==null or !Input.is_action_pressed("attack") or block_falling):
 			return
 		get_parent().queue_free()
+		$"../../../SFX/breaking sound".play()
 		$"../../../Player".timer=$"../../../Player".delay
