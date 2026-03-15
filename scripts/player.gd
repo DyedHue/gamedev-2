@@ -58,6 +58,7 @@ var frame_count: int = 0
 @onready var light: PointLight2D = $PointLight2D
 
 var game_over_camera_pos: Vector2 = Vector2(0.18, 0.18)
+var last_velocity_y:float
 
 func _ready() -> void:
 	air_jump_charge = MAX_AIR_JUMP_CHARGE
@@ -77,8 +78,6 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	#if gameover:
-		#$Camera2D.zoom = $Camera2D.zoom.move_toward(game_over_camera_pos, 300 * delta)
 	var gravity_vec: Vector2 = handle_gravity(delta)
 	var movement_vec: Vector2 = handle_movement()
 	var jump_vec: Vector2 = handle_jump(delta)
@@ -91,7 +90,6 @@ func _physics_process(delta: float) -> void:
 
 	if jump_vec != Vector2.ZERO:
 		current_velocity.y = jump_vec.y	
-		
 		
 	if wall_jump_vec != Vector2.ZERO:
 		current_velocity.y = wall_jump_vec.y
@@ -122,12 +120,13 @@ func _physics_process(delta: float) -> void:
 	#else:
 		#pass
 	move_and_slide()
+	
 	post_update_state()
+	update_anim()
 	
 	show_debug()
 	frame_count += 1
 	timer=max(0, timer-delta)
-
 
 
 func handle_gravity(delta: float) -> Vector2:
@@ -173,6 +172,7 @@ func handle_jump(delta: float) -> Vector2:
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			jump_vec.y = JUMP_VELOCITY
+			$"../SFX/Jump".play()
 			state.vertical = VerticalState.GROUND_JUMP
 				
 	elif Input.is_action_pressed("jump") and can_variable_jump:
@@ -202,6 +202,10 @@ func handle_wall_jump() -> Vector2:
 	return vec
 
 func post_update_state() -> void:
+	if is_on_floor() and last_velocity_y > 1500:
+		$"../SFX/fall".play()
+	last_velocity_y = velocity.y
+	
 	if is_on_floor():
 		jump_duration = 0
 	elif velocity.y >= 0:
@@ -209,7 +213,8 @@ func post_update_state() -> void:
 		
 	if state.vertical == VerticalState.FALL and is_on_floor():
 		state.vertical = VerticalState.NONE
-	
+		
+func update_anim():
 	var anim = "Idle"
 	if(velocity.x != 0):
 		anim = "Walk"
