@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b262lh50l2281" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dbjml18yoe8c5" path="res://scenes/hud.tscn" id="1_wljb1"]
 [ext_resource type="Texture2D" uid="uid://1b1d8srjoqvo" path="res://sprites/lush sprites/grass background extra.png" id="2_1kice"]
-[ext_resource type="Texture2D" uid="uid://blr6bo7iwcbei" path="res://sprites/lush sprites/stone background.png" id="4_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://dw3u1psmoy6ol" path="res://Audios/Brick 4.mp3" id="4_wljb1"]
 [ext_resource type="Script" uid="uid://cq1p1qxcjdcse" path="res://scripts/camera_2d.gd" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cnejflencuu4m" path="res://scenes/breakable platform.tscn" id="5_p57ef"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dfsefqibei1n" path="res://sprites/lush sprites/moss block 2.png" id="10_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cinht33atcxka" path="res://sprites/lush sprites/grass.png" id="11_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://7f4vibwfmo3i" path="res://sprites/lush sprites/sunray.png" id="12_dinhu"]
+[ext_resource type="Script" uid="uid://ijogukwe56yk" path="res://scripts/grass_background_1.gd" id="12_gxtfn"]
 [ext_resource type="Texture2D" uid="uid://6wexiugma2yu" path="res://sprites/lush sprites/mossy stone.png" id="12_kvuet"]
 [ext_resource type="Texture2D" uid="uid://bpy6voo5dt5o6" path="res://sprites/lush sprites/corner vines.png" id="13_ca42v"]
 [ext_resource type="Texture2D" uid="uid://b4g0xl7og8l2h" path="res://sprites/lush sprites/grass background.png" id="14_trtic"]
@@ -119,11 +119,7 @@ outline_color = Color(0.32622838, 0.19899803, 4.813075e-08, 1)
 
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
 z_index = 3
-position = Vector2(7373, -1760)
-can_dash = true
-can_wall_slide = true
-can_variable_jump = true
-has_pickaxe = true
+position = Vector2(9483, -1437)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1660706876 node_paths=PackedStringArray("player")]
 position = Vector2(0, -150.46997)
@@ -133,10 +129,17 @@ player = NodePath("..")
 
 [node name="HUD" parent="." unique_id=640754921 instance=ExtResource("1_wljb1")]
 
+[node name="SFX" type="Node2D" parent="." unique_id=1439634554]
+
+[node name="breaking sound" type="AudioStreamPlayer" parent="SFX" unique_id=543714831]
+stream = ExtResource("4_wljb1")
+
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2008967908]
+z_index = 4
+z_as_relative = false
 scale = Vector2(3.2728152, 7.645126)
 scroll_scale = Vector2(1.065, 1.065)
-scroll_offset = Vector2(9230, -451.00018)
+scroll_offset = Vector2(9437.001, 380.9999)
 
 [node name="Sunray2" type="Sprite2D" parent="Parallax2D2" unique_id=354364188]
 self_modulate = Color(1, 1, 1, 0.41568628)
@@ -147,10 +150,12 @@ scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("12_dinhu")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=278944152]
+z_index = 4
+z_as_relative = false
 rotation = -0.25796476
 scale = Vector2(2.952381, 77.64917)
 scroll_scale = Vector2(1.11, 1.11)
-scroll_offset = Vector2(10452.999, -1052)
+scroll_offset = Vector2(10384, -556.0001)
 
 [node name="Sunray3" type="Sprite2D" parent="Parallax2D3" unique_id=1191420024]
 self_modulate = Color(1, 1, 1, 0.2784314)
@@ -159,15 +164,8 @@ z_index = 2
 material = SubResource("CanvasItemMaterial_dinhu")
 scale = Vector2(0.30554736, 0.1308023)
 texture = ExtResource("20_qouja")
-[node name="SFX" type="Node2D" parent="." unique_id=1439634554]
 
-[node name="breaking sound" type="AudioStreamPlayer" parent="SFX" unique_id=543714831]
-stream = ExtResource("4_wljb1")
-
-[node name="Color Rects" type="Node2D" parent="." unique_id=1369506212]
-light_mask = 2
-
-[node name="ColorRect4" type="ColorRect" parent="Color Rects" unique_id=3040722]
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=3040722]
 light_mask = 2
 layout_direction = 1
 offset_left = -4663.0
@@ -175,6 +173,56 @@ offset_top = 1384.0
 offset_right = 22655.0
 offset_bottom = 9015.0
 color = Color(0.2784314, 0.27058825, 0.25882354, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1611043797]
+light_mask = 2
+layout_direction = 1
+offset_left = 623.00006
+offset_top = 5917.0
+offset_right = 27941.0
+offset_bottom = 13548.0
+scale = Vector2(0.24592358, 0.20359084)
+color = Color(0.09209279, 0.09209276, 0.0953025, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=1693830792]
+light_mask = 2
+layout_direction = 1
+offset_left = 7597.0005
+offset_top = 6301.0
+offset_right = 34915.0
+offset_bottom = 13932.0
+scale = Vector2(0.19088998, 0.28162718)
+color = Color(0.09019608, 0.09019608, 0.09411765, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="." unique_id=1224714514]
+light_mask = 2
+layout_direction = 1
+offset_left = 13973.0
+offset_top = 6217.0
+offset_right = 41291.0
+offset_bottom = 13848.0
+scale = Vector2(0.24932791, 0.20209324)
+color = Color(0.09019608, 0.09019608, 0.09411765, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="." unique_id=2089871114]
+light_mask = 2
+layout_direction = 1
+offset_left = 6852.0
+offset_top = 4706.0
+offset_right = 34170.0
+offset_bottom = 12337.0
+scale = Vector2(0.23825032, 0.23326407)
+color = Color(0.08235294, 0.08235294, 0.08627451, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="." unique_id=1338691558]
+light_mask = 2
+layout_direction = 1
+offset_left = 5876.0
+offset_top = 4235.0
+offset_right = 33194.0
+offset_bottom = 11866.0
+scale = Vector2(0.047480274, 0.18504807)
+color = Color(0.08235294, 0.08235294, 0.08627451, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1001625729]
 z_index = 1
@@ -231,6 +279,7 @@ scale = Vector2(3.5931613, 3.5931613)
 texture = ExtResource("21_js0lu")
 
 [node name="ColorRect5" type="ColorRect" parent="stone environment" unique_id=1794386490]
+light_mask = 2
 layout_direction = 1
 offset_left = 13362.0
 offset_top = -615.0
@@ -260,11 +309,6 @@ scroll_offset = Vector2(16162, 1178)
 scale = Vector2(3.5931613, 3.5931613)
 texture = ExtResource("21_js0lu")
 
-[node name="SideStones" type="Sprite2D" parent="stone environment" unique_id=1527748075]
-position = Vector2(1299, 3419)
-scale = Vector2(3.9636166, 3.9636166)
-texture = ExtResource("21_wljb1")
-
 [node name="SideStones2" type="Sprite2D" parent="stone environment" unique_id=1676968264]
 position = Vector2(4038, 5947)
 scale = Vector2(2.8626914, 2.8626914)
@@ -283,19 +327,6 @@ texture = ExtResource("21_wljb1")
 region_enabled = true
 region_rect = Rect2(25.663696, 485.52502, 742.23865, 545.4591)
 
-[node name="SideStones5" type="Sprite2D" parent="stone environment" unique_id=1475517593]
-position = Vector2(18126, 4176)
-rotation = 0.099996656
-scale = Vector2(-2.227725, 2.227725)
-texture = ExtResource("21_wljb1")
-
-[node name="SideStones6" type="Sprite2D" parent="stone environment" unique_id=2132375042]
-position = Vector2(19251.998, 5978)
-scale = Vector2(-1.8133347, 1.8133347)
-texture = ExtResource("21_wljb1")
-region_enabled = true
-region_rect = Rect2(19.25528, 508.5597, 569.625, 555.8159)
-
 [node name="yggdrassil environment" type="Node2D" parent="." unique_id=618916152]
 
 [node name="Parallax2D" type="Parallax2D" parent="yggdrassil environment" unique_id=148010656]
@@ -307,6 +338,7 @@ light_mask = 2
 position = Vector2(363, 43.999985)
 scale = Vector2(7.516083, 7.3870006)
 texture = ExtResource("2_1kice")
+script = ExtResource("12_gxtfn")
 
 [node name="tree" type="Sprite2D" parent="yggdrassil environment" unique_id=1685740354]
 light_mask = 2
@@ -638,15 +670,6 @@ texture = ExtResource("5_sgl2t")
 position = Vector2(20314, 6889)
 scale = Vector2(0.4352911, 0.4352911)
 texture = ExtResource("5_sgl2t")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1054170353]
-visible = false
-offset_left = -3821.0
-offset_top = 1420.0
-offset_right = 6041.0
-offset_bottom = 5978.0
-texture = ExtResource("4_0tnpc")
-stretch_mode = 4
 
 [node name="Falling blocks" type="Node2D" parent="." unique_id=324026237]
 
