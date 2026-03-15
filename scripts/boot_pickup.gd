@@ -8,6 +8,8 @@ func on_area_entered(_other_area):
 	hide()
 	boot_hint.show()
 	$"../../Player".can_variable_jump=true
+	$"../../SFX/item pickup".play()
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 func _ready() -> void:
 	area_entered.connect(on_area_entered)

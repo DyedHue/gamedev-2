@@ -13,6 +13,8 @@ func on_area_entered(other_area):
 	hide()
 	pick_hint.show()
 	$\"../../Player\".has_pickaxe=true
+	$\"../../SFX/item pickup\".play()
+	$CollisionShape2D.set_deferred(\"disabled\", true)
 	
 func _ready() -> void:
 	area_entered.connect(on_area_entered) # Replace with function body.

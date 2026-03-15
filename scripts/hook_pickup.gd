@@ -8,6 +8,8 @@ func on_area_entered(other_area):
 	hide()
 	hook_hint.show()
 	$"../../Player".can_wall_slide=true
+	$"../../SFX/item pickup".play()
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 func _ready() -> void:
 	hook_hint.hide()

@@ -5,7 +5,7 @@ extends Area2D
 @onready var col = $CollisionShape2D
 
 var timer: float = 0
-
+var on: bool
 func _init() -> void:
 	collision_layer = 2
 	collision_mask = 0
@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func _process(delta) -> void:
 	has_pickaxe=$"../..".has_pickaxe
+	get_node("CollisionShape2D").set_deferred("disabled", !on)
 	if Input.is_action_just_pressed("attack"):
 		col.set_deferred("disabled", !has_pickaxe)
 		timer = 0.1
