@@ -211,10 +211,10 @@ func post_update_state() -> void:
 		anim = "Jump" if velocity.y < 0 else "Fall"
 	sprite.play(anim)
 		
-	if position.x > 4692.0 && position.x < 13225.0 and position.y < 3159.0:
-		light.enabled = false
-	else:
-		light.enabled = true
+	#if position.x > 4692.0 && position.x < 13225.0 and position.y < 3159.0:
+		#light.enabled = false
+	#else:
+		#light.enabled = true
 
 func show_debug() -> void:
 	var slide_str = "sliding" if state.is_wall_sliding else "notSlid"
