@@ -16,9 +16,9 @@ func _ready() -> void:
 
 func _process(delta) -> void:
 	has_pickaxe=$"../..".has_pickaxe
-	get_node("CollisionShape2D").set_deferred("disabled", !on)
+	#get_node("CollisionShape2D").set_deferred("disabled", !on)
 	if Input.is_action_just_pressed("attack"):
-		col.set_deferred("disabled", !has_pickaxe)
+		col.set_deferred("disabled", !(has_pickaxe and on))
 		timer = 0.1
 		
 	if timer > 0:
