@@ -7,6 +7,8 @@ func on_area_entered(other_area):
 	hide()
 	dash_boot_hint.show()
 	$"../../Player".can_dash=true
+	$"../../SFX/item pickup".play()
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

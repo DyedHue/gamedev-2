@@ -12,6 +12,8 @@ func on_area_entered(other_area):
 	gate_opened=true
 	gate_open.show()
 	gate.hide()
+	$"../SFX/Button press".play()
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 func _ready() -> void:
 	area_entered.connect(on_area_entered) 
