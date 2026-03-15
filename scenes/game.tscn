@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bm0r1gikoi3o2" path="res://sprites/collection orb.png" id="5_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://bu6xm6dwub7f6" path="res://scenes/falling platform.tscn" id="6_u5sy4"]
 [ext_resource type="TileSet" uid="uid://m1tlmmqtocb7" path="res://tilesets/new_tile_set.tres" id="6_wljb1"]
+[ext_resource type="AudioStream" uid="uid://mfssrj2661nm" path="res://Audios/8a47098d4cb8d02aea56fcf723659bfb.wav" id="7_twgab"]
 [ext_resource type="PackedScene" uid="uid://dggxqglet6rx6" path="res://scenes/pickaxe_pickup.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://dfsefqibei1n" path="res://sprites/lush sprites/moss block 2.png" id="10_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cinht33atcxka" path="res://sprites/lush sprites/grass.png" id="11_kvpfn"]
@@ -119,7 +120,7 @@ outline_color = Color(0.32622838, 0.19899803, 4.813075e-08, 1)
 
 [node name="Player" parent="." unique_id=1440685661 instance=ExtResource("1_uwrxv")]
 z_index = 3
-position = Vector2(7373, -1760)
+position = Vector2(1739, 6534)
 can_dash = true
 can_wall_slide = true
 can_variable_jump = true
@@ -159,10 +160,20 @@ z_index = 2
 material = SubResource("CanvasItemMaterial_dinhu")
 scale = Vector2(0.30554736, 0.1308023)
 texture = ExtResource("20_qouja")
+
 [node name="SFX" type="Node2D" parent="." unique_id=1439634554]
 
 [node name="breaking sound" type="AudioStreamPlayer" parent="SFX" unique_id=543714831]
 stream = ExtResource("4_wljb1")
+
+[node name="item pickup" type="AudioStreamPlayer" parent="SFX" unique_id=1889736555]
+stream = ExtResource("7_twgab")
+volume_db = 19.438
+
+[node name="Button press" type="AudioStreamPlayer" parent="SFX" unique_id=1234549450]
+stream = ExtResource("7_twgab")
+volume_db = 24.0
+pitch_scale = 0.31
 
 [node name="Color Rects" type="Node2D" parent="." unique_id=1369506212]
 light_mask = 2

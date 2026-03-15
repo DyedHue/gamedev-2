@@ -72,6 +72,8 @@ func _ready() -> void:
 	pick2.hide()
 	pick2col.disabled=true
 	attack=0
+	$AnimatedSprite2D/pick1Hitbox.on=true
+	$AnimatedSprite2D/pick2Hitbox.on=false
 	
 
 func _physics_process(delta: float) -> void:
@@ -98,14 +100,18 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_left"):
 		sprite.flip_h=true
 		pick1.hide()
+		$AnimatedSprite2D/pick1Hitbox.on=false
 		if has_pickaxe:
 			pick2.show()
+			$AnimatedSprite2D/pick2Hitbox.on=true
 	elif Input.is_action_pressed("move_right"):
 		sprite.flip_h=false
 		#pick1col.disabled=false
 		if has_pickaxe:
 			pick1.show()
+			$AnimatedSprite2D/pick1Hitbox.on=true
 		pick2.hide()
+		$AnimatedSprite2D/pick2Hitbox.on=false
 		#pick2col.disabled=false
 	
 	velocity = current_velocity
